@@ -97,7 +97,7 @@
 \usepackage{tikz}
 \usepackage{tkz-euclide} % tikz package for Euclidean geometry
 \usepackage{siunitx} % typesetting quantities
-\usepackage{pgfplots} \pgfplotsset{compat=1.13} % plotting graphs
+\usepackage{pgfplots} %\pgfplotsset{compat=1.13} % plotting graphs
 \usetikzlibrary{calc} % calculations within tikz
 \usetkzobj{all} % needed for tkz-euclide package
  
@@ -368,7 +368,7 @@ An integer $n$ is \underline{\it composite} if $n\neq 0, \pm 1$, and it is not p
 \subsection{Sample handwritten proof}
 \label{s: sample handwritten proof}
 
-Let's use one of the proofs we did in class as an example.  We begin with the typed up version and then show one way that this same proof might be handwritten.
+Let's use one of the proofs in Chapter 1 as an example.  We begin with the typed up version and then show one way that this same proof might be handwritten.
 
 \begin{mdframed}
 \begin{claim*}
@@ -1014,11 +1014,13 @@ For all $n\in \N$, $n$ has more than one pair of parents if and only if $n$ has 
 \begin{proof}
 Given $S=\{ n\in \N\st n\tn{ \it has at least three different non-trivial factors}\}$ and $T=\{ n\in \N \st n \tn{ \it has more than one pair of parents}\}$.
 \begin{enumerate}
-\item {\it Why $S\subset T$:}\todo{Ch 1: Clean up this proof part 1. It is correct but confusing.} 
-Let $n\in S$. Then there exist distinct $a, b, c \in \N$ such that $a\divides n$, $b\divides n$, and $c\divides n$. Either each of these are paired with another one of $a,b,c$ to be a pair of parents of $n$ or they are not. If they are not paired with any of each other, then $n$ has at least three pairs of parents, which is more than one. If one of them is paired with another, there is still a third factor that cannot be paired with the other two (because they are already paired). So it is part of a second pair of parents. Thus $n\in T$.
+  \item {\it Why $S\subset T$:} Suppose that $a,b,c\in\mathbb{N}$ and are distinct. Suppose also that $a \mid n$, $b\mid n$, $c\mid n$. Then there exist 
+    $i,j,k\in \mathbb{N}$ so that $n=ak$, $n=bj$, $c=in$. If $k=b$, then $a$ and $b$ are one pair of parents. Since $c$ is distinct from $a$ and $b$, it follows
+    that $c$ and $i$ are a second pair of parents. Likewise, if $k = c$, then $a$ and $c$ are a pair of parents. Since $b$ is distinct from $a$ and $c$, $b$ and $j$ 
+    are a second set of parents. Finally, if neither $k=b$ nor $k=c$ is true, then $a$ and $k$ are a pair of parents, where $k$ is distinct from $b$ and $c$.
+    Since $a$ is also distinct from $b$, $b$ and $j$ are a second pair of parents.
 
-
-We have shown that if $n\in S$, then $n\in T$. By definition of subset, this shows $S\subset T$. \qedpart{1}
+    We have shown that if $n\in S$, then $n\in T$. By definition of subset, this shows $S\subset T$. \qedpart{1}
 
 \item {\it Why $T\subset S$:} 
 Let $n\in T$. Then there exist at least two pairs $a, a'\in \N$ and $b, b'\in \N$ such that $aa'=n$ and $b,b'=n$, and $\{a,a'\} \neq \{b, b'\}$.
