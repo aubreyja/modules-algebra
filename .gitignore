@@ -7,3 +7,5 @@
 *.synctex.gz
 *.tdo
 *.toc
+*.tex.swp
+*.swp
