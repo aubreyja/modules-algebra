@@ -465,8 +465,63 @@ So the symbol $i$ is here used as shorthand for $\sqrt{-1}$. But as you have see
 
 TODO: RELATE TO ABOVE INQUIRY
 
+\subsubsection{A reminder about multiplying binomials}
+
+One more thing before we start multiplying complex numbers. Do you remember how to multiply binomials? For example, suppose we want to find
+\[ (x+y)(z+w).\]
+We could use the distributive law for multipication to write
+\begin{align*}
+  (x+y)(z+w) &= (x+y)z + (x+y)w\\
+             &= xz + yz + xw + yw
+\end{align*}
+For example, if we wanted to multiply $307$ and $52$ we could do this:
+\begin{align*}
+  (300+7)(50+2) &= 300(50) + 7(50) + 300(2) + 7(2)\\
+                &= 1500 + 350 + 600 + 14\\
+                &= 2464
+\end{align*}
+The distributive law is very important, and we would never give it up - even when we are dealing with complex numbers. Just below we give a formula for
+multiplication of complex numbers, but it is important to understand that this formula is not magic - it's a consequence of the distributive property.
+So, if you know the distributive law (and you do) and you know how to calculate powers of $i$ (and you do), then you can multiply complex numbers. (So you can!)
+For example,
+\begin{align*}
+  (3-4i)(2+5i) &= (3-4i)(2) + (3-4i)(5i)\\
+               &= (3)(2) - (4i)(2) + 3(5i)-(4i)(5i)\\
+               &= 6 - 8i + 15i -20i^2\\
+               &= 6 + 7i -20i^2
+\end{align*}
+Now, we know that $i^2= -1$ so we can replace $-20i^2$ with $20$ to obtain that
+\begin{align*}
+  (3-4i)(2+5i) &= 6-8i-20i^2 = 6-8i+20\\
+               & 26 + 7i.
+\end{align*}
+Now if we do this again, but with arbitrary complex numbers $a+bi$ and $c+di$ we obtain
+\begin{align*}
+  (a+bi)(c+di) &= (a+bi)(c)+(a+bi)(di)\\
+               &= ac + bci + adi + bdi^2\\
+               &= ac + bci + adi - bd\\
+             &= (ac-bd)+(ad+bc)i.
+\end{align*}
+
+Therefore we have
+
+\begin{definition}
 Multiplication of two complex numbers is defined as follows:
 \[ (a+bi)(c+di) = (ac-bd) + (ad+bc)i.\]
+\end{definition}
+
+\begin{example}
+  \begin{align*}
+    \left( 3-4i \right)\left( 2+5i \right) &= \left( (3)(2)-(-4)(5) \right)+\left( (3)(5)+(-4)(2) \right)i\\
+                                           &= 26 + 7i
+  \end{align*}
+\end{example}
+
+\begin{task}
+  \begin{itemize}
+    \item this
+  \end{itemize}
+\end{task}
 
 \newpage
 \subsection{Homework}
