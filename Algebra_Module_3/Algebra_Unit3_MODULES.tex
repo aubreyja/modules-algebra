@@ -193,15 +193,24 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 
 %%Day 1
 
-In this section we will begin our study of \emph{fields}. You've already encountered fields in your mathematical studies: the set of rational numbers $\mathbb{Q}$ and the set of real numbers $\mathbb{R}$ are fields, 
-as is the set of complex numbers $\mathbb{C}$. The sets $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are different in many ways, but here we will focus on the ways in which they are similar. We will also see that there
-are fields that are different from these three in some very important ways.
+In this section we will begin our study of \emph{fields}. You've already encountered fields in your mathematical studies: the set of rational numbers $\mathbb{Q}$ 
+and the set of real numbers $\mathbb{R}$ are fields, as is the set of complex numbers $\mathbb{C}$. The sets $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are 
+different in many ways, but here we will focus on the ways in which they are similar. 
 
-Consider the equation
+We will also see that there are fields that are different from these three in some very important ways, but again, our goal for now is to understand the source
+of their similarities. The number systems that we use on a daily basis are both very familiar and very strange. We can all recite facts about arithmetic
+or the steps for solving a simple equation without much thought, but students have a knack for asking ``Why?'' at just the right time. The goal of this section
+is to explore the foundations of the number systems we typically use for solving equations. This exploration will allow us to provide well grounded, thorough, and
+pedagogically appropriate justifications for the steps we use in algebra every day to solve equations. But it will also allow us to explore exciting extensions of
+our ordinary mathematical practices and allow us to connect equation solving to geometry in an intriguing way.
+
+To begin, consider the equation
       \[ 3x + 8 = 14. \]
-It's not hard to see that the solution to this equation is $x=2$: $3(2)+8 = 14$. Let's us solve this equation step-by-step, justifying each step along the way. First we will subtract 8 from both sides:
+It's not hard to see that the solution to this equation is $x=2$: $3(2)+8 = 14$. Let's us solve this equation step-by-step, justifying each step along the 
+way. First we will subtract $8$ from both sides:
 \[ (3x+8)-8 = 14 -8.\]
-(Note that we could also view this as adding -8 to both sides. The number $-8$ is known as the \emph{additive inverse} of 8.) Applying the associative law on the left-hand side gives
+(Note that we could also view this as adding $-8$ to both sides. The number $-8$ is known as the \emph{additive inverse} of $8$.) Applying the associative 
+law on the left-hand side gives
 \[ 3x + (8-8) = 6.\]
 We know that $8-8=0$ so we have
 \[ 3x + 0 = 6.\]
@@ -218,9 +227,9 @@ The number 1 is the \emph{multiplicative identity} meaning that $1x = x$. So we 
 
 Let us analyze this situation more carefully. First note that the equation $3x+8 = 14$ uses two operations, called addition and multiplication. 
 (Subtraction can always be defined in terms of addition, and division can be defined in terms of multiplication.)
-We used some familiar properites of addition and multiplication such as associativity of addition and multiplication.
+We used some familiar properties of addition and multiplication such as associativity of addition and multiplication.
 
-Above we multplied by $1/3$ at point in the solution. Since $1/3$ is a rational number, we say that we solved this equation ``over the
+Above we multiplied by $1/3$ at point in the solution. Since $1/3$ is a rational number, we say that we solved this equation ``over the
 rationals.'' But, notice that in this example we didn't really need to do this. Next we give a solution to the equation $3x+8=14$ ``over the
 integers.'' We begin the same way:
 \begin{align*}
@@ -243,20 +252,28 @@ One can prove that in the integers that if $a$, $b$, and $c$ are integers and $a
   \end{itemize}
 \end{task}
 
-We call $0$ an additive identity because for any number $n$, $n+0 = 0 + n = n$.
+The equation $3x+8=14$ can be solved over the rationals, integers, or natural numbers, but notice that the equation $3x+8=10$ cannot be solved over
+the integers or natural numbers. The solution $x=2/3$ is a rational number and is not a natural number or integer. Notice that so long as $a$, $b$ and
+$c$ are always rational numbers, $ax+b=c$ will always have a rational solution.  The same goes for equations with real or complex coefficients. On the
+other hand, if $a$, $b$, and $c$ are integers, that does not guarantee that $ax+b=c$ will have an integer solution. We want to determine all of the 
+properties necessary on a set of numbers for an equation such as $ax+b=c$ to always have a solution in that set. That is, we want to figure out
+what makes a set of numbers like $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ in this regard. We will call such a set of numbers a field.
+
+We begin with some terminology.
+
+We call $0$ an additive identity because for any number $n$, $n+0 = 0 + n = n$. The number $0$ is also an additive identity in the set of complex numbers,
+although more formally it is $0+0i$. A corresponding notion for multiplication exists - the multiplicative identity.
 
 \begin{task}
   \begin{itemize}
-    \item Consider the collection of all $2\times 2$ matricies whose entries are real numbers. Write down the additive identity of this set.
+    \item Consider the collection of all $2\times 2$ matrices whose entries are real numbers. Write down the additive identity of this set.
     \item How would you define the general notion of a \emph{multiplicative identity}? What is a multiplicative identity in $\mathbb{Q}$?
-    \item Is there a multiplicative identity for the set of all $2\times 2$ matricies with real entries?
+    \item Is there a multiplicative identity for the set of all $2\times 2$ matrices with real entries?
   \end{itemize}
 \end{task}
 
 Once we have a notion of an additive identity, we can define the notion of an additive inverse. We say that 
-a number $b$ is an additive inverse of a number $a$ if and only if $a+b=b+a = 0$. If $b$ is an additive
-inverse of $a$ we write $b = -a$. Note that $-a$ may be positive or negative. For example,
-the additive inverse of $4$ is $-4$, but the additve inverse of $-5$ is $5$.
+a number $b$ is an additive inverse of a number $a$ if and only if $a+b=b+a = 0$. 
 
 \begin{task}
   How would you define the notion of a \emph{multiplicative inverse}? Give an example of a number $a$ and its 
@@ -280,7 +297,7 @@ where $a,b,c\mathbb{F}$ and $a \neq 0$. The properties we need to make this happ
     \item If $a\in \mathbb{F}$, then $a$ has an additive inverse in $\mathbb{F}$.
     \item If $a,b\in\mathbb{F}$, then there is a unique $a\cdot b \in \mathbb{F}$.
     \item Multiplication is associative.
-    \item Multiplication is commutatitive.
+    \item Multiplication is commutative.
     \item There is a multiplicative identity in $\mathbb{F}$.
     \item If $a\in \mathbb{F}$ and $a\neq 0$, then there is a multiplicative inverse of $a$ in $\mathbb{F}$.
     \item Multiplication distributes over addition. That is, if $a,b,c\in\mathbb{F}$, then 
@@ -290,7 +307,7 @@ where $a,b,c\mathbb{F}$ and $a \neq 0$. The properties we need to make this happ
 \end{definition}
 
 Of course, you have seen fields before: the rational numbers $\mathbb{Q}$ and the real numbers $\mathbb{R}$ are both fields under their usual operations of
-addition and multplication. In fact, $\mathbb{Q}$ is a \emph{subfield} of $\mathbb{R}$.
+addition and multiplication. In fact, $\mathbb{Q}$ is a \emph{subfield} of $\mathbb{R}$.
 
 \subsection{More on Identities and Inverses}
 
@@ -310,10 +327,10 @@ additive identity? We have the following proposition:
   This proves that the additive identity in any field is unique.
 \end{proof}
 
-There are a couple of observations to make about this prove. First, a good general strategy for proving that something is unique is to assume that there are
-two of them and then prove that they are equal.  If needed, you can also assume that your two proposed objects are not equal and derive a contratiction, but
+There are a couple of observations to make about this proof. First, a good general strategy for proving that something is unique is to assume that there are
+two of them and then prove that they are equal.  If needed, you can also assume that your two proposed objects are not equal and derive a contradiction, but
 notice that we did not need to do that in the proof above. Second, observe that besides using the definition of an additive identity, the only other property we
-used to prove the proposition above is that addition is commutatitive.
+used to prove the proposition above is that addition is commutative.
 
 Since the additive identity in any field is unique, we will almost always use the usual symbol $0$ to represent it, unless we have reason not to. 
 
@@ -321,10 +338,13 @@ Since the additive identity in any field is unique, we will almost always use th
   Use the proof above as a model to show that in any field the multiplicative identity is unique.
 \end{task}
 
-Similarly, since the multplicative identity in any field is unique, we will almost always use the usual symbol $1$ to represent it. 
+Similarly, since the multiplicative identity in any field is unique, we will almost always use the usual symbol $1$ to represent it. 
 
-There is a similar fact to observe with respect to additive and multiplicative inverses.  For example, there is only one rational number whose sum with
-$-\frac{1}{2}$ is 0, namely $\frac{1}{2}$. Similarly, there is only one rational number whose product with $-\frac{1}{2}$ is $1$, namely $-2$. We have:
+There is a similar fact to observe with respect to additive and multiplicative inverses. For example, there is only one rational number whose sum with
+$-\frac{1}{2}$ is 0, namely $\frac{1}{2}$. Similarly, there is only one rational number whose product with $-\frac{1}{2}$ is $1$, namely $-2$. 
+Above you may have noticed that we said ``an additive inverse'' instead of ``the additive inverse,'' and
+``a multiplicative inverse'' instead of ``the multiplicative inverse.'' We didn't want to suggest that they are unique, and were hoping that a reader might notice
+our strange locution and question it. But now we are at a point where we are happy to admit that additive and multiplicative inverses are, in a sense, unique:
 
 \begin{proposition}
   If $\mathbb{F}$ is a field and $a\in \mathbb{F}$, then its additive inverse is unique to it.
@@ -344,26 +364,149 @@ $-\frac{1}{2}$ is 0, namely $\frac{1}{2}$. Similarly, there is only one rational
   Thus we conclude that $c=b$ and that every element in a field has a unique additive inverse.
 \end{proof}
 
-\begin{proposition}
-  If $a\in\mathbb{F}$, then $a\cdot 0 = 0 \cdot a = 0$.
-\end{proposition}
+If $b$ is the additive inverse of $a$ we write $b = -a$. Note that $-a$ may be positive or negative. For example,
+the additive inverse of $4$ is $-4$, but the additive inverse of $-5$ is $5$. This brings up an important point. 
+When people see ``$-a$'' it is common to read it as ``minus $a$,'' or ``negative $a$.'' The least common thing for
+people to say is ``the additive inverse of $a$.'' But, that's what we want you to do because it really helps to 
+keep things straight as, for example, in the following proposition.
 
 \begin{proposition}
   Suppose $a,b\in\mathbb{F}$. Then
   \begin{enumerate}
-    \item $-(-a) = a$
-    \item $-a = (-1)a$
-    \item $-(a+b)=(-a) + (-b)$
-    \item $-(a\cdot b) = (-a)\cdot b = a\cdot (-b)$.
+    \item[(a)] $-(-a) = a$
+    \item[(b)] $-a = (-1)a$
+    \item[(c)] $-(a+b)=(-a) + (-b)$
+    \item[(d)] $-(a\cdot b) = (-a)\cdot b = a\cdot (-b)$.
   \end{enumerate}
 \end{proposition}
+\begin{proof}
+The proof of item (a) is really an exercise in understanding the definition of the additive inverse. The expression $-a$ means ``the additive inverse
+of $a$.'' So the expression ``$-(-a)$ means the additive inverse of $-a$. What is the additive inverse of $-a$? It's $a$ of course. That's because
+\[ a + (-a) = (-a) + a = 0.\]
+To prove (b), we want to so that $(-1)a$ is the additive inverse of $a$. How would we do that? Well, we must show that
+\[ a + (-1)a = 0.\]
+Here it goes:
+\begin{align*}
+  a + (-1)a &= 1a + (-1)a\\
+            &= (1 + (-1))a\\
+            &= 0\cdot a\\
+            &= 0
+\end{align*}
+Thus $a+(-1)a =0$. Since addition is commutative we know that $a+(-1)a=(-1)a+a=0$. So $(-1)a$ fits the definition of an additive inverse of $a$. Since 
+additive inverses are unique we conclude that $(-1)a=-a$. The proofs of parts (c) and (d) are left as exercises.
+\end{proof}
+
+Notice that in the proof above we had a nice, if slightly tricky, application of the distributive property. That trick is really helpful. Here's another 
+application of it.
+
+\begin{proposition}
+  If $a\in\mathbb{F}$, then $a\cdot 0 = 0 \cdot a = 0$.
+\end{proposition}
+\begin{proof}
+  We have 
+  \begin{align*}
+  a &= a\cdot 1\\
+    &= a\cdot (1+0)\\
+    &= a\cdot 1 + a\cdot 0\\
+    &= a + a\cdot 0.
+  \end{align*}
+  Thus, $a = a + a \cdot 0$. Now add $-a$ to both sides:
+  \begin{align*}
+   (-a) + a &= (-a) + (a + a\cdot 0)\\
+   0 &= (-a + a) + a\cdot 0\\
+   0 &= 0 + a\cdot 0\\
+   0 &= a\cdot 0
+  \end{align*}
+\end{proof}
+
+\begin{task}
+  In the proof above we only used field axioms, but did not identify which ones we used as we went along. For each step in the proof above, identify the
+  field axioms that justify the step.
+\end{task}
+
+
+%%Multiplicative Inverses
+
+\subsection{Field Extensions}
 
 \subsection{Ordered Fields}
 
+TODO: Order Axioms
+
+\begin{definition}
+  Suppose that $\mathbb{F}$ is an ordered field. An element $a\in\mathbb{F}$ is positive if $0 < a$ and $a$ is negative if $a < 0$.
+\end{definition}
+
+\begin{proposition}
+  Suppose that $\mathbb{F}$ is an ordered field. Then
+  \begin{enumerate}
+    \item $x\in \mathbb{F}$ is positive if and only if $-x$ is negative.
+    \item If $x,y \in \mathbb{F}$, then $x+y$ and $xy$ are positive.
+    \item If $x\neq 0$, then $x^2$ is positive.
+    \item $1$ is positive.
+  \end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+  If $x$ and $y$ are positive, then $\frac{x}{y}$ and $\frac{y}{x}$ are positive.
+\end{corollary}
+
+\begin{corollary}
+  $\mathbb{C}$ is not an ordered field.
+\end{corollary}
+
+\begin{proposition}
+  In an ordered field, if $x$ is positive then $nx$ is positive for all $n$.
+\end{proposition}
+
+TODO: Somewhere above introduce integral elements.
+
+\begin{proposition}
+  In an ordered field, if $x$ is positive then $1/x$ is positive.
+\end{proposition}
+
+\begin{proposition} In an ordered field
+  \begin{enumerate}
+    \item[(a)] the product of a positive element and a negative element is negative.
+    \item[(b)] the product of a negative element and a negative element is positive.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+  Suppose that $\mathbb{F}$ is an ordered field. Then for all $a,b\in\mathbb{F}$
+  \begin{itemize}
+    \item[(a)] If $a<b$ and $c>0$, then $ac < bc$.
+    \item[(b)] If $a< b$ and $c < 0$, then $ac > bc$.
+  \end{itemize}
+\end{proposition}
+
+
+\subsection{Other Fields}
+
+\subsubsection{$\mathbb{Q}(\sqrt{n})$}
+
+\subsubsection{$\mathbb{Q}[x]$}
+
+\subsubsection{Finite Fields}
+
+\subsection{The Archimedean Property and Completeness}
+
+\subsubsection{What are the real numbers, really?}
+
 \part{Constructible Numbers}
+
+\subsection{Constructible Lengths}
+
+\subsection{Quadratic Extensions}
+
 
 \part{Three Famous Problems}
 
+\subsection{Doubling the Cube}
+
+\subsection{Trisecting an Angle}
+
+\subsection{Squaring a Circle}
 
 
 \end{document}
