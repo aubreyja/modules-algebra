@@ -332,7 +332,7 @@ two of them and then prove that they are equal.  If needed, you can also assume 
 notice that we did not need to do that in the proof above. Second, observe that besides using the definition of an additive identity, the only other property we
 used to prove the proposition above is that addition is commutative.
 
-Since the additive identity in any field is unique, we will almost always use the usual symbol $0$ to represent it, unless we have reason not to. 
+Since the additive identity in any field is unique, we will always use the usual symbol $0$ to represent it, unless we have a good reason not to. 
 
 \begin{task}
   Use the proof above as a model to show that in any field the multiplicative identity is unique.
@@ -377,7 +377,7 @@ keep things straight as, for example, in the following proposition.
     \item[(b)] $-a = (-1)a$
     \item[(c)] $-(a+b)=(-a) + (-b)$
     \item[(d)] $-(a\cdot b) = (-a)\cdot b = a\cdot (-b)$.
-  \end{enumerate}
+  \end{enumerate}\label{prop: additive inverses}
 \end{proposition}
 \begin{proof}
 The proof of item (a) is really an exercise in understanding the definition of the additive inverse. The expression $-a$ means ``the additive inverse
@@ -395,6 +395,17 @@ Here it goes:
 Thus $a+(-1)a =0$. Since addition is commutative we know that $a+(-1)a=(-1)a+a=0$. So $(-1)a$ fits the definition of an additive inverse of $a$. Since 
 additive inverses are unique we conclude that $(-1)a=-a$. The proofs of parts (c) and (d) are left as exercises.
 \end{proof}
+
+It's a good idea to translate the statements in Proposition \ref{prop: additive inverses} into statements in ordinary language:
+\begin{center}
+  \begin{tabular}[]{ll}
+    \textbf{Mathematical Statement} & \textbf{English Statement} \\
+   $-(-a)=a$ & The additive inverse of the additive inverse of $a$ is $a$ itself.\\
+   $-a = (-1)a$ & The additive inverse of $a$ is $-1$ times $a$.\\
+   $-(a+b)=(-a)+(-b)$ & The additive inverse of a sum is the sum of the additive inverses.\\
+   $-(a\cdot b) = (-a)\cdot b$  & The additive inverse of $a$ times $b$ is $b$ times the additive inverse of $a$. 
+  \end{tabular}
+\end{center}
 
 Notice that in the proof above we had a nice, if slightly tricky, application of the distributive property. That trick is really helpful. Here's another 
 application of it.
@@ -424,8 +435,13 @@ application of it.
   field axioms that justify the step.
 \end{task}
 
+Now let's discuss multiplicative inverses. The fundamental facts about multiplicative inverses largely parallel the fundamental facts about multplicative inverses. In a field, there is a unique
+mulplicative identity. We'll always call it $1$ unless we have a good reason not to. And, in a field every element except the additive identity has a multplicative inverse which is unique to it.
+We will denote the multiplicative inverse of $a$ as $a^{-1}$. Because our experience with fields is mostly limited to $\mathbb{Q}$ and $\mathbb{R}$, it is common to reflexively think that 
+\[ a^{-1} = \frac{1}{a}. \]
+For example, $2^{-1} = 1/2$. And it is true that in $\mathbb{Q}$ and $\mathbb{R}$ (and even in $\mathbb{C}$), $a^{-1} = 1/a$ for nonzero $a$. However, as we will see in the example below, it is not true in
+every field that $a = 1/a$. 
 
-%%Multiplicative Inverses
 
 \subsection{Field Extensions}
 
