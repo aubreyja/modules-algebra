@@ -504,11 +504,42 @@ see in the example below, it is not true in every field that $a = 1/a$.
   \end{itemize}
 \end{task}
 
+The main point of the previous examples is that $-a$ does not always mean ``the negative of $a$,'' and $a^{-1}$ does not always mean $1/a$. In every context
+it's safe to read $-a$ as ``the additive inverse of $a$'' and to read $a^{-1}$ as ``the multiplicative inverse of $a$.''
+
+We have the following facts about multiplicative inverses. The proof of this proposition is left as an exercise.
+
+\begin{proposition} Suppose that $\mathbb{F}$ is a field and that $a,b\in\mathbb{F}$ and $a,b\neq 0$.
+  \begin{itemize}
+    \item[(a)] $(a^{-1})^{-1} = a$
+    \item[(b)] $(a\cdot b)^{-1}=b^{-1}\cdot a^{-1}$
+    \item[(c)] $(-a)^{-1} = -a^{-1}$
+  \end{itemize}\label{prop: multiplicative inverses}
+\end{proposition}
+
+\begin{task}
+Again, it's helpful here to state the parts of this proposition in ordinary language. For example, part (a) asserts that ``the multiplicative inverse of
+the multiplicative inverse of $a$ is $a$ itself.'' Do the same for parts (b) and (c).
+\end{task}
+
 \subsection{Field Extensions}
+
+TODO
 
 \subsection{Ordered Fields}
 
-TODO: Order Axioms
+Above we gave the axioms that define a field. We add to those the following \emph{order axioms} to create an \emph{ordered field}.
+
+\begin{definition} Suppose that $\mathbb{F}$ is a field. Then $\mathbb{F}$ is an \emph{ordered field} if there is an order
+  relation $<$ on $\mathbb{F}$ that satisfies the following properties for any $a,b,c\in\mathbb{F}$:
+\begin{itemize}
+  \item (Trichotomy) Exactly one of the following holds: $a < b$, $a=b$ or $b < a$.
+  \item (Transitivity) $a< b$ and $b < c$ implies that $a < c$.
+  \item (Addition) If $a< b$, then $a+b < a+c$.
+  \item (Multiplication) If $a < b$, $0 < c$, then $ac < bc$.
+\end{itemize}
+\end{definition}
+
 
 \begin{definition}
   Suppose that $\mathbb{F}$ is an ordered field. An element $a\in\mathbb{F}$ is positive if $0 < a$ and $a$ is negative if $a < 0$.
@@ -517,12 +548,18 @@ TODO: Order Axioms
 \begin{proposition}
   Suppose that $\mathbb{F}$ is an ordered field. Then
   \begin{enumerate}
-    \item $x\in \mathbb{F}$ is positive if and only if $-x$ is negative.
-    \item If $x,y \in \mathbb{F}$, then $x+y$ and $xy$ are positive.
-    \item If $x\neq 0$, then $x^2$ is positive.
-    \item $1$ is positive.
+    \item[(a)] $x\in \mathbb{F}$ is positive if and only if $-x$ is negative.
+    \item[(b)] If $x,y \in \mathbb{F}$, then $x+y$ and $xy$ are positive.
+    \item[(c)] If $x\neq 0$, then $x^2$ is positive.
+    \item[(d)] $1$ is positive.
   \end{enumerate}
 \end{proposition}
+\begin{proof}
+  For part (a) we proceed as follows. Suppose that $x\in\mathbb{F}$ is positive. By definition that means $0 < x$. Since $x\in\mathbb{F}$ it's additive
+  inverse $-x$ is also in $\mathbb{F}$. By the addition axiom for ordering, since $0 < x$ we have
+  \[ -x + 0 < -x + x.\]
+  We know that $-x+0 = -x$ and that $-x + x = 0$. So we have $-x < 0$. Thus, if $x$ is positive, then $-x$ is negative.
+\end{proof}
 
 \begin{corollary}
   If $x$ and $y$ are positive, then $\frac{x}{y}$ and $\frac{y}{x}$ are positive.
