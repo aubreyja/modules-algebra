@@ -435,8 +435,8 @@ application of it.
   field axioms that justify the step.
 \end{task}
 
-Now let's discuss multiplicative inverses. The fundamental facts about multiplicative inverses largely parallel the fundamental facts about multplicative inverses. In a field, there is a unique
-mulplicative identity. We'll always call it $1$ unless we have a good reason not to. And, in a field every element except the additive identity has a multplicative inverse which is unique to it.
+Now let's discuss multiplicative inverses. The fundamental facts about multiplicative inverses largely parallel the fundamental facts about multiplicative inverses. In a field, there is a unique
+multiplicative identity. We'll always call it $1$ unless we have a good reason not to. And, in a field every element except the additive identity has a multiplicative inverse which is unique to it.
 We will denote the multiplicative inverse of $a$ as $a^{-1}$. Because our experience with fields is mostly limited to $\mathbb{Q}$ and $\mathbb{R}$, it is common to reflexively think that 
 \[ a^{-1} = \frac{1}{a}. \]
 For example, $2^{-1} = 1/2$. And it is true that in $\mathbb{Q}$ and $\mathbb{R}$ (and even in $\mathbb{C}$), $a^{-1} = 1/a$ for nonzero $a$. However, as we will 
@@ -595,6 +595,7 @@ TODO: Somewhere above introduce integral elements.
   \end{itemize}
 \end{proposition}
 
+TODO: Integral Elements
 
 \subsection{Other Fields}
 
@@ -606,20 +607,181 @@ TODO: Somewhere above introduce integral elements.
 
 \subsection{The Archimedean Property and Completeness}
 
+\begin{definition}
+  An ordered field $\mathbb{F}$ is Archimedean if and only if for each positive $x\in\mathbb{F}$ there is an integral element $k\in\mathbb{F}$ such that $x < k$.
+\end{definition}
+
+\begin{theorem}
+  For each positive element $x$ in an Archimedean field $\mathbb{F}$ there is a unique integral element $n$ such that
+  \[ n \leq x < n + 1.\]
+  \label{theorem: archimedean implies unique integral element}
+\end{theorem}
+
+\begin{definition}
+  Suppose $\mathbb{F}$ is an ordered field and $A\subseteq \mathbb{F}$
+  \begin{enumerate}
+    \item[(a)] An element $b\in\mathbb{F}$ is an upper bound for $A$ if $a\leq b$ for all $a\in A$. If there is an upper bound for $A$, then 
+      we say $A$ is bounded above.
+    \item[(b)] If $b$ is an upper bound for $A\subseteq \mathbb{F}$ and if $b\leq u$ for any other upper bound $u$ for $A$, then $b$ is a least
+      upper bound for $A$.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  An ordered field $\mathbb{F}$ is complete if and only if every subset of $\mathbb{F}$ that is bounded above has a least upper bound.
+\end{definition}
+
+TODO: Alternate completeness axiom (with greatest lower bound)
+
+TODO: Notice that $\mathbb{Q}$ shows that Archimedean does not imply complete.
+
+\begin{theorem}
+  Any complete ordered field is Archimedean.
+  \label{theorem: complete implies archimedean}
+\end{theorem}
+
 \subsubsection{What are the real numbers, really?}
+
+\begin{enumerate}
+  \item There are fields that are not ordered fields.
+  \item There are ordered fields that are not Archimedean.
+  \item There are Archimedean fields that are not complete.
+  \item Every complete ordered field is Archimedean.
+\end{enumerate}
+
+The real numbers $\mathbb{R}$ is a complete ordered field. In fact, it is the unique complete ordered field.
+
+\begin{theorem}
+  Any complete ordered field is isomorphic to the ordered field of real numbers.
+  \label{theorem: reals are unique}
+\end{theorem}
 
 \part{Constructible Numbers}
 
+Question: Given a line segment of length 1 in the plane, for what values of $a$ can we construct a line segment of length $a$ using compass and ruler constructions?
+
+\begin{definition}[Fundamental Constructions] The following compass and ruler constructions are known as our three fundamental constructions.
+  \begin{enumerate}
+    \item Given two points, we may draw a line through them, extending it indefinitely in each direction.
+    \item Given two points, we may draw the line segment connecting them.
+    \item Given a point and line segment, we may draw a circle with center at the point and radius equal to the length of the line segment.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}
+  Using the fundamental constructions, we can bisect any angle.
+\end{example}
+
+\begin{example}
+  Using the fundamental constructions, we can construct angles of $30^\circ$ and $60^\circ$.
+\end{example}
+
+\begin{example}
+  Using the fundamental constructions, we can draw a line parallel to a given line through any point not on the given line.
+\end{example}
+
 \subsection{Constructible Lengths}
+
+\begin{lemma}
+  Given segments of length 1, $a$ and $b$, it is possible to construct segments of lengths $a+b$, $a-b$ (when $a>b$), $ab$, and $a/b$.
+  \label{lemma: rational constructions}
+\end{lemma}
+
+\begin{definition}
+  A real number $a$ is constructible if given initially a segment of length $1$, it is possible to construct a segment of length $|a|$.
+\end{definition}
+
+\begin{lemma}
+  Given segments of length $1$ and $a$, a segment of length $\sqrt{a}$ may be constructed.
+  \label{lemma: sqrt can be constructed}
+\end{lemma}
 
 \subsection{Quadratic Extensions}
 
+\begin{theorem}
+  If $\mathbb{F}$ is a field, then so is $\mathbb{F}(\sqrt{k})$.
+  \label{theorem: quadratic extensions of fields are fields}
+\end{theorem}
+
+\begin{theorem}
+  A number $a$ is constructible if there is a finite sequence of fields $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ with
+  $a\in\mathbb{F}_N$ and such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$.
+  \label{theorem: constructible if in sequence of quadratic extensions}
+\end{theorem}
+
+\begin{definition}
+  If $\mathbb{F}$ is a field, the plane of $\mathbb{F}$ will denote the set of all points $(x,y)$ in the Cartesian plane so that $x$ and $y$ are in $\mathbb{F}$. By a line in
+  $\mathbb{F}$ we mean a line passing through two points in the plane of $\mathbb{F}$. By a circle in $\mathbb{F}$ we mean a circle with both its center and some point on its
+  circumference in the plane of $\mathbb{F}$.
+\end{definition}
+
+Note that any fundamental construction using only points in the plane of a field $\mathbb{F}$ involves the construction of a line or a cube in $\mathbb{F}$.
+TODO: Show this for a circle
+
+\begin{lemma}
+  Every line in $\mathbb{F}$ can be represented by an equation of the form $ax+by+c = 0$ with $a,b,c\in\mathbb{F}$
+  \label{lemma: line in F}
+\end{lemma}
+
+\begin{lemma}
+  Every circle in $\mathbb{F}$ can be represented by an equation of the form $x^2 + y^2 + ax + by +c = 0$ with $a,b,c\in\mathbb{F}$.
+  \label{lemma: circle in F}
+\end{lemma}
+
+\begin{theorem}
+  \begin{enumerate}
+    \item The point of intersection of two distinct, nonparallel lines in $\mathbb{F}$ is in the plane of $\mathbb{F}$.
+    \item The points of intersection of a line in $\mathbb{F}$ and a circle in $\mathbb{F}$ are either in the plane of $\mathbb{F}$
+      or in the plane of some quadratic extension of $\mathbb{F}$.
+    \item The points of intersection of two circles in $\mathbb{F}$ are either in the plane of $\mathbb{F}$
+      or in the plane of some quadratic extension of $\mathbb{F}$.
+  \end{enumerate}
+  \label{theorem: intersections}
+\end{theorem}
+
+\begin{theorem}
+  The following statements are equivalent:
+  \begin{enumerate}
+    \item The number $a$ is constructible.
+    \item There is a finite sequence of fields $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ with
+  $a\in\mathbb{F}_N$ and such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$.
+  \end{enumerate}<++>
+  \label{theorem: constructible iff in sequence of quadratic extensions}
+\end{theorem}
 
 \part{Three Famous Problems}
 
 \subsection{Doubling the Cube}
 
+Given a line segment representing the edge of a cube, is it possible to construct another line segment representing the edge of a cube with exactly
+twice the volume of the first cube?
+
+Without loss of generality we will take the length of a side of the original cube to be 1. Then the desired line segment must have length $\sqrt[3]{2}$.
+
+\begin{theorem}
+  Let $\mathbb{F}(\sqrt{k})$ be a quadratic extension of a field $\mathbb{F}$. If $\sqrt[3]{2}$ is in $\mathbb{F}(\sqrt{k})$, then $\sqrt[3]{2}$ must be in $\mathbb{F}$ itself.
+  \label{theorem: cube root of 2}
+\end{theorem}
+
+\begin{theorem}
+  It is impossible to double the cube.
+  \label{theorem: can't double cube}
+\end{theorem}
+
 \subsection{Trisecting an Angle}
+
+TODO: We show that it is impossible to trisect an angle of $60^\circ$. If this were possible, it would be possible to construct a $20^\circ$ angle. This implies that $\cos(20^\circ)$ is constructible.
+This implies that a root of $x^3-3x  -1 =0$ is constructible.
+
+\begin{theorem}
+  If $\mathbb{F}(\sqrt{k})$ contains a root of $x^2-3x-1=0$, then so does $\mathbb{F}$.
+  \label{theorem: trisecting set up}
+\end{theorem}
+
+\begin{theorem}
+  It is not possible to trisect and arbitrary angle.
+  \label{theorem: can't trisect arbitrary angle}
+\end{theorem}
 
 \subsection{Squaring a Circle}
 
