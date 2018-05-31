@@ -1010,10 +1010,9 @@ Above we gave the axioms that define a field. We add to those the following \emp
       \vspace{1in}
   \end{enumerate}\newpage
 
-\part{Semi-Advanced Topics in Fields}
-
 \subsection{Inquiry: $\mathbb{Q}(x)$}
 
+\begin{task}
 In $\mathbb{Q}$ and $\mathbb{R}$ we know that we have the integers as a subset. And, each positive integer can be built up by repeatedly adding 1 to itself.
 That is,
 \begin{align*}
@@ -1070,15 +1069,241 @@ $r_1(x) = \frac{p_1(x)}{q_1(x)}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}$, suppose t
 \[ r_1(x) < r_2(x) \] 
 if and only if the leading coefficient of 
 \[ p_2(x)q_1(x) - p_1(x)q_2(x) \]
-is positive.
+is positive. This ordering can be difficult to get a handle on. In practice you want to (a) make sure to leading coefficients in the denominator are positive, and
+if not multiply by $-1/-1$ to make it so and then (b) cross multiply and subtract. Here are two examples, followed by some exercises for you to try.
+
+\begin{example}
+  Let us compare $r_1(x) = \frac{2x^2 + 11x + 1}{x+5}$ and $r_2(x) = 2x +1$. First, we observe that as a rational function $r_2(x) = \frac{2x+1}{1}$ and 
+  that both $r_1(x)$ and $r_2(x)$ have positive leading coefficients in the denominator. Now we cross multiply and obtain
+  \begin{align*}
+    (x+5)(2x+1) &= 2x^2 + 11x + 5\\
+    (1)(2x^2 + 11x + 1) = 2x^2 + 11x + 1
+  \end{align*}
+  We see that $(2x^2+11x + 5)-(2x^2+11x+1) = 4$ while subtracting in the other direction gives a negative. So we conclude that
+  \[ \frac{2x^2+11x+1}{x+5} < 2x + 1.\]
+\end{example}
+
+\begin{example}
+  Let us compare $r_1(x) = \frac{-x^2+3}{-2x+1}$ and $r_2(x) = \frac{2x+1}{2x-1}$. First, we multiply $r_1(x)$ by $-1/-1$ to rewrite it as
+  $r_1(x) = \frac{x^2-3}{2x-1}$. Now we cross multiply and obtain
+  \begin{align*}
+    (2x-1)(x^2-3) &= 2x^3-x^2-6x +4\\
+    (2x-1)(2x+1) &= 4x^2-1
+  \end{align*}
+  We see that $(2x^3-x^2-6x +4)- (4x^2-1) = 2x^3-5x^2-6x+3$ has positive leading coefficient. So we conclude that
+  \[r_2(x) = \frac{2x+1}{2x-1} < r_1(x) = \frac{-x^2+3}{-2x+1}. \]
+\end{example}
 
 \begin{enumerate}
     \setcounter{enumi}{3}
-  \item Some rational function comparisons
+  \item It is important to play with this ordering a bit to get used to it. Try to work through these examples in small groups. For each pair $r_1(x)$ and $r_2(x)$
+    determine whether $r_1(x) < r_2(x)$, $r_1(x)=r_2(x)$ or $r_2(x) < r_1(x)$.
+    \begin{enumerate}
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x+5}{3x^2+x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x+6}{3x^2+x-2}$.
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{3x^2+x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x+5}{3x^2+x-2}$.
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{3x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x^2+5}{3x^2-2}$.
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{-3x+2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x^2+5}{3x-2}$.
+    \end{enumerate}
 \end{enumerate}
+
+The purpose of this opening task is to give you a sense of how the field $\mathbb{Q}(x)$ works. The fact that these operations make it an ordered field is
+a theorem which is not difficult to prove, but is somewhat tedious. So here we simply state it without proof.
+
+\begin{theorem}
+  The set of rational functions over the rationals,
+\[ \mathbb{Q}(x) = \left\{ \frac{p(x)}{q(x)} \mid p(x) \text{ and }q(x)\text{ are polynomials with rational coefficients} \right\}.\]
+together with the operations of addition ($+$) and multiplication ($\cdot$) defined above form a field. If we add in the ordering $<$ defined above,
+$\mathbb{Q}(x)$ is an ordered field.
+  \label{theorem: rational fcns over rational form a field}
+\end{theorem}
+
+We opened this inquiry by talking about integral elements. Here, in $\mathbb{Q}(x)$, the integral elements are of the form
+\[ q_n(x) = n \]
+for $n\in\mathbb{N}$. (Notice that these are degree 0 polynomials, and are also rational functions since $q_n(x) = \frac{n}{1}$.) As your final task in
+this inquiry, prove the following facts:
+
+\begin{enumerate}
+  \item Suppose that $r(x) =  x^2 + 2x + 3$. Prove that $q_{500}(x) < r(x)$
+  \item Suppose that $r(x) =  2x + 3$. Prove that for any $n\in\mathbb{N}$, $q_n(x) < r(x)$.
+  \item Suppose that $r(x) =  a_mx^m + a_{m-1}x_{m-1}+\cdots a_1x + a_0$ is an element
+    of $\mathbb{Q}(x)$ with $m \geq 1$. Prove that if $a_m > 0$, then $q_{500}(x) < r(x)$
+  \item Suppose that $r(x) =  a_mx^m + a_{m-1}x_{m-1}+\cdots a_1x + a_0$ is an element
+    of $\mathbb{Q}(x)$ with $m \geq 1$. Prove that for any $n\in\mathbb{N}$, if $a_m > 0$, then $q_{n}(x) < r(x)$
+\end{enumerate}
+
+You've just shown that in $\mathbb{Q}(x)$ every polynomial with degree at least 1 and with positive leading coefficient is greater than every integral
+element. 
+\end{task}
+
+\part{Semi-Advanced Topics in Ordered Fields}
+
+\subsection{Opening Inquiry: $\mathbb{Q}(x)$}
+
+\begin{task}
+In $\mathbb{Q}$ and $\mathbb{R}$ we know that we have the integers as a subset. And, each positive integer can be built up by repeatedly adding 1 to itself.
+That is,
+\begin{align*}
+  1 + 1 &= 2\\
+  1+ 1 + 1 &= 3
+\end{align*}
+and so on. Then, once we have the positive integers, we know we have the negative integers because in a field every element has an additive inverse. 
+
+We can do exactly the same construction in any field. That's because any arbitrary field $\mathbb{F}$ has a multplitive identity, which we call $1$. (As we have seen,
+it may actually be quite different from the number 1.) Then we can form special elements by repeatedly adding the multiplicative identity to itself over and
+over. So for example, in any field we can define
+\begin{align*}
+  2 &= 1 + 1\\
+  3 &= 1 + 1 + 1
+\end{align*}
+and so on. We call these elements \emph{integral elements}. In this inquiry we want to study the integral elements of a somewhat strange field - the field
+of rational functions with rational coefficients. We begin by defining this field, which we denote $\mathbb{Q}(x)$.
+
+\subsubsection{Defining $\mathbb{Q}(x)$}
+
+First we define the set of objects $\mathbb{Q}(x)$:
+\[ \mathbb{Q}(x) = \left\{ \frac{p(x)}{q(x)} \mid p(x) \text{ and }q(x)\text{ are polynomials with rational coefficients} \right\}.\]
+
+\begin{enumerate}
+  \item Which of the following are elements of $\mathbb{Q}(x)$?
+    \begin{itemize}
+      \item $r(x) = x^2 + 1$
+      \item $s(x) = \frac{3x^2+\pi x + 1}{4x^3 + 2x^2 + x + 2}$
+      \item $t(x) = \frac{x^{1/2}+2x + 1}{\frac{3}{2}x+5}$
+      \item $u(x) = \frac{\frac{2}{3}x^2+2x + 1}{\frac{3}{2}x+5}$
+    \end{itemize}
+\end{enumerate}
+
+We define the equality of two rational functions, as well as their sums and products, like we do with fractions. That is, given $r_1(x),r_2(x)\in\mathbb{Q}(x)$ with
+$r_1(x) = \frac{p_1(x)}{q_1(x)}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}$ we define
+\begin{itemize}
+  \item $r_1(x)=r_2(x)$ if and only if $p_1(x)q_2(x) - q_1(x)p_2(x) = 0$
+  \item $(r_1 + r_2)(x) = \frac{p_1(x)q_2(x) + q_1(x)p_2(x)}{q_1(x)q_2(x)}$
+  \item $(r_1\cdot r_2)(x) = \frac{p_1(x)p_2(x)}{q_1(x)q_2(x)}$
+\end{itemize}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+  \item Suppose that
+    \[ r_1(x) = \frac{x^2 + \frac{1}{2}x + 2}{x+1},\quad  r_2(x) = \frac{x + 2}{x^2 +4}, \text{ and } r_3(x)=\frac{2x^2 + x + 4}{2x+2}.\]
+    Is $r_1(x) = r_2(x)$? Is $r_1(x) = r_3(x)$? Is $r_2(x) = r_3(x)$?
+  \item Suppose that 
+    \[ r_1(x) = \frac{3x^2 + 2x + 1}{x+5} \text{ and } r_2(x) = \frac{8x + 2}{4x^2 +\frac{1}{2}}.\]
+    Compute $(r_1+r_2)(x)$ and $(r_1\cdot r_2)(x)$.
+\end{enumerate}
+
+Next we define an ordering on $\mathbb{Q}(x)$ as follows: Given $r_1(x),r_2(x)\in\mathbb{Q}(x)$ with
+$r_1(x) = \frac{p_1(x)}{q_1(x)}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}$, suppose that the leading coefficients of $q_1(x)$ and $q_2(x)$ are both positive. Then
+\[ r_1(x) < r_2(x) \] 
+if and only if the leading coefficient of 
+\[ p_2(x)q_1(x) - p_1(x)q_2(x) \]
+is positive. This ordering can be difficult to get a handle on. In practice you want to (a) make sure to leading coefficients in the denominator are positive, and
+if not multiply by $-1/-1$ to make it so and then (b) cross multiply and subtract. Here are two examples, followed by some exercises for you to try.
+
+\begin{example}
+  Let us compare $r_1(x) = \frac{2x^2 + 11x + 1}{x+5}$ and $r_2(x) = 2x +1$. First, we observe that as a rational function $r_2(x) = \frac{2x+1}{1}$ and 
+  that both $r_1(x)$ and $r_2(x)$ have positive leading coefficients in the denominator. Now we cross multiply and obtain
+  \begin{align*}
+    (x+5)(2x+1) &= 2x^2 + 11x + 5\\
+    (1)(2x^2 + 11x + 1) = 2x^2 + 11x + 1
+  \end{align*}
+  We see that $(2x^2+11x + 5)-(2x^2+11x+1) = 4$ while subtracting in the other direction gives a negative. So we conclude that
+  \[ \frac{2x^2+11x+1}{x+5} < 2x + 1.\]
+\end{example}
+
+\begin{example}
+  Let us compare $r_1(x) = \frac{-x^2+3}{-2x+1}$ and $r_2(x) = \frac{2x+1}{2x-1}$. First, we multiply $r_1(x)$ by $-1/-1$ to rewrite it as
+  $r_1(x) = \frac{x^2-3}{2x-1}$. Now we cross multiply and obtain
+  \begin{align*}
+    (2x-1)(x^2-3) &= 2x^3-x^2-6x +4\\
+    (2x-1)(2x+1) &= 4x^2-1
+  \end{align*}
+  We see that $(2x^3-x^2-6x +4)- (4x^2-1) = 2x^3-5x^2-6x+3$ has positive leading coefficient. So we conclude that
+  \[r_2(x) = \frac{2x+1}{2x-1} < r_1(x) = \frac{-x^2+3}{-2x+1}. \]
+\end{example}
+
+\begin{enumerate}
+    \setcounter{enumi}{3}
+  \item It is important to play with this ordering a bit to get used to it. Try to work through these examples in small groups. For each pair $r_1(x)$ and $r_2(x)$
+    determine whether $r_1(x) < r_2(x)$, $r_1(x)=r_2(x)$ or $r_2(x) < r_1(x)$.
+    \begin{enumerate}
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x+5}{3x^2+x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x+6}{3x^2+x-2}$.
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{3x^2+x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x+5}{3x^2+x-2}$.
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{3x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x^2+5}{3x^2-2}$.
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{-3x+2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x^2+5}{3x-2}$.
+    \end{enumerate}
+\end{enumerate}
+
+The purpose of this opening task is to give you a sense of how the field $\mathbb{Q}(x)$ works. The fact that these operations make it an ordered field is
+a theorem which is not difficult to prove, but is somewhat tedious. So here we simply state it without proof.
+
+\begin{theorem*}
+  The set of rational functions over the rationals,
+\[ \mathbb{Q}(x) = \left\{ \frac{p(x)}{q(x)} \mid p(x) \text{ and }q(x)\text{ are polynomials with rational coefficients} \right\}.\]
+together with the operations of addition ($+$) and multiplication ($\cdot$) defined above form a field. If we add in the ordering $<$ defined above,
+$\mathbb{Q}(x)$ is an ordered field.
+\end{theorem*}
+
+We opened this inquiry by talking about integral elements. Here, in $\mathbb{Q}(x)$, the integral elements are of the form
+\[ q_n(x) = n \]
+for $n\in\mathbb{N}$. (Notice that these are degree 0 polynomials, and are also rational functions since $q_n(x) = \frac{n}{1}$.) As your final task in
+this inquiry, prove the following facts:
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+  \item Suppose that $r(x) =  x^2 + 2x + 3$. Prove that $q_{500}(x) < r(x)$
+  \item Suppose that $r(x) =  2x + 3$. Prove that for any $n\in\mathbb{N}$, $q_n(x) < r(x)$.
+  \item Suppose that $r(x) =  a_mx^m + a_{m-1}x_{m-1}+\cdots a_1x + a_0$ is an element
+    of $\mathbb{Q}(x)$ with $m \geq 1$. Prove that if $a_m > 0$, then $q_{500}(x) < r(x)$
+  \item Suppose that $r(x) =  a_mx^m + a_{m-1}x_{m-1}+\cdots a_1x + a_0$ is an element
+    of $\mathbb{Q}(x)$ with $m \geq 1$. Prove that for any $n\in\mathbb{N}$, if $a_m > 0$, then $q_{n}(x) < r(x)$
+\end{enumerate}
+
+You've just shown that in $\mathbb{Q}(x)$ every polynomial with degree at least 1 and with positive leading coefficient is greater than every integral
+element. 
+\end{task}
 
 \section{Upper and Lower Bounds}
 
+Once we have a notion of order in a field, we can talk about upper and lower bounds.
+
+\begin{definition}
+  Let $\mathbb{F}$ be an ordered field and suppose that $S\subseteq \mathbb{F}$. Then
+  \begin{itemize}
+    \item $u$ is an upper bound of $S$ if $x \leq u$ for all $x\in S$.
+    \item $l$ is a lower bound of $S$ if $l \leq x$ for all $x\in S$.
+  \end{itemize}
+\end{definition}
+
+\begin{example}
+  Consider the set $S = \{ x \in \mathbb{Q} \mid 2 \leq x < 3 \}$. Notice that
+  $3$ is an upper bound of $S$, but so is $3.5$, $4$, and indeed any number larger
+  than $3$. Similarly, $2$ is a lower bound of $\mathbb{Q}$ as is $1\frac{3}{4}$ and
+  any number less than $2$. Upper bounds and lower bounds may or not be members of
+  the sets they bound.
+\end{example}
+
+\begin{definition}
+  Let $\mathbb{F}$ be an ordered field and suppose that $S\subseteq \mathbb{F}$. Then
+    \item $u$ is a least upper bound of $S$ if 
+      \begin{enumerate}
+        \item $x \leq u$ for all $x\in S$, and
+        \item If $b$ is an upper bound of $S$, then $u\leq b$. 
+      \end{enumerate}
+    \item $l$ is a greatest lower bound of $S$ 
+      \begin{enumerate}
+        \item if $l \leq x$ for all $x\in S$, and
+        \item if $b$ is a lower bound of $S$, then $b \leq l$.
+      \end{enumerate}
+\end{definition}
+
+\begin{example}
+  Consider the set $S = \{ x \in \mathbb{Q} \mid 2 \leq x < 3 \}$. Notice that
+  $3$ is an upper bound of $S$, and any other upper bound of $S$ is greater than or 
+  equal to $3$. Thus, $3$ is the least upper bound of $S$. Similarly, $2$ is a lower 
+  bound of $\mathbb{Q}$ and any other lower bound of $S$ must be less than or
+  equal to $2$. Thus, $2$ is the greatest lower bound of $S$.  Note that a greatest 
+  lower bound or least upper bound of a set may be in the set or not in the set.
+\end{example}
 
 \subsection{The Archimedean Property and Completeness}
 
@@ -1091,16 +1316,6 @@ is positive.
   \[ n \leq x < n + 1.\]
   \label{theorem: archimedean implies unique integral element}
 \end{theorem}
-
-\begin{definition}
-  Suppose $\mathbb{F}$ is an ordered field and $A\subseteq \mathbb{F}$
-  \begin{enumerate}
-    \item[(a)] An element $b\in\mathbb{F}$ is an upper bound for $A$ if $a\leq b$ for all $a\in A$. If there is an upper bound for $A$, then 
-      we say $A$ is bounded above.
-    \item[(b)] If $b$ is an upper bound for $A\subseteq \mathbb{F}$ and if $b\leq u$ for any other upper bound $u$ for $A$, then $b$ is a least
-      upper bound for $A$.
-  \end{enumerate}
-\end{definition}
 
 \begin{definition}
   An ordered field $\mathbb{F}$ is complete if and only if every subset of $\mathbb{F}$ that is bounded above has a least upper bound.
@@ -1141,6 +1356,147 @@ The real numbers $\mathbb{R}$ is a complete ordered field. In fact, it is the un
 
 \end{enumerate}
 
+\subsection{In-Class Resources}
+
+\newpage 
+\subsubsection{Opening Inquiry: $\mathbb{Q}(x)$}
+
+\begin{task}
+In $\mathbb{Q}$ and $\mathbb{R}$ we know that we have the integers as a subset. And, each positive integer can be built up by repeatedly adding 1 to itself.
+That is,
+\begin{align*}
+  1 + 1 &= 2\\
+  1+ 1 + 1 &= 3
+\end{align*}
+and so on. Then, once we have the positive integers, we know we have the negative integers because in a field every element has an additive inverse. 
+
+We can do exactly the same construction in any field. That's because any arbitrary field $\mathbb{F}$ has a multplitive identity, which we call $1$. (As we have seen,
+it may actually be quite different from the number 1.) Then we can form special elements by repeatedly adding the multiplicative identity to itself over and
+over. So for example, in any field we can define
+\begin{align*}
+  2 &= 1 + 1\\
+  3 &= 1 + 1 + 1
+\end{align*}
+and so on. We call these elements \emph{integral elements}. In this inquiry we want to study the integral elements of a somewhat strange field - the field
+of rational functions with rational coefficients. We begin by defining this field, which we denote $\mathbb{Q}(x)$.
+
+\subsubsection{Defining $\mathbb{Q}(x)$}
+
+First we define the set of objects $\mathbb{Q}(x)$:
+\[ \mathbb{Q}(x) = \left\{ \frac{p(x)}{q(x)} \mid p(x) \text{ and }q(x)\text{ are polynomials with rational coefficients} \right\}.\]
+
+\begin{enumerate}
+  \item Which of the following are elements of $\mathbb{Q}(x)$?
+    \begin{itemize}
+      \item $r(x) = x^2 + 1$
+        \vspace{.5in}
+      \item $s(x) = \frac{3x^2+\pi x + 1}{4x^3 + 2x^2 + x + 2}$
+        \vspace{.5in}
+      \item $t(x) = \frac{x^{1/2}+2x + 1}{\frac{3}{2}x+5}$
+        \vspace{.5in}
+      \item $u(x) = \frac{\frac{2}{3}x^2+2x + 1}{\frac{3}{2}x+5}$
+        \vspace{.5in}
+    \end{itemize}
+\end{enumerate}
+
+We define the equality of two rational functions, as well as their sums and products, like we do with fractions. That is, given $r_1(x),r_2(x)\in\mathbb{Q}(x)$ with
+$r_1(x) = \frac{p_1(x)}{q_1(x)}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}$ we define
+\begin{itemize}
+  \item $r_1(x)=r_2(x)$ if and only if $p_1(x)q_2(x) - q_1(x)p_2(x) = 0$
+  \item $(r_1 + r_2)(x) = \frac{p_1(x)q_2(x) + q_1(x)p_2(x)}{q_1(x)q_2(x)}$
+  \item $(r_1\cdot r_2)(x) = \frac{p_1(x)p_2(x)}{q_1(x)q_2(x)}$
+\end{itemize}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+  \item Suppose that
+    \[ r_1(x) = \frac{x^2 + \frac{1}{2}x + 2}{x+1},\quad  r_2(x) = \frac{x + 2}{x^2 +4}, \text{ and } r_3(x)=\frac{2x^2 + x + 4}{2x+2}.\]
+    Is $r_1(x) = r_2(x)$? Is $r_1(x) = r_3(x)$? Is $r_2(x) = r_3(x)$?
+        \vspace{1.25in}
+  \item Suppose that 
+    \[ r_1(x) = \frac{3x^2 + 2x + 1}{x+5} \text{ and } r_2(x) = \frac{8x + 2}{4x^2 +\frac{1}{2}}.\]
+    Compute $(r_1+r_2)(x)$ and $(r_1\cdot r_2)(x)$.
+        \vspace{1.25in}
+\end{enumerate}
+
+Next we define an ordering on $\mathbb{Q}(x)$ as follows: Given $r_1(x),r_2(x)\in\mathbb{Q}(x)$ with
+$r_1(x) = \frac{p_1(x)}{q_1(x)}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}$, suppose that the leading coefficients of $q_1(x)$ and $q_2(x)$ are both positive. Then
+\[ r_1(x) < r_2(x) \] 
+if and only if the leading coefficient of 
+\[ p_2(x)q_1(x) - p_1(x)q_2(x) \]
+is positive. This ordering can be difficult to get a handle on. In practice you want to (a) make sure to leading coefficients in the denominator are positive, and
+if not multiply by $-1/-1$ to make it so and then (b) cross multiply and subtract. Here are two examples, followed by some exercises for you to try.
+
+\begin{example}
+  Let us compare $r_1(x) = \frac{2x^2 + 11x + 1}{x+5}$ and $r_2(x) = 2x +1$. First, we observe that as a rational function $r_2(x) = \frac{2x+1}{1}$ and 
+  that both $r_1(x)$ and $r_2(x)$ have positive leading coefficients in the denominator. Now we cross multiply and obtain
+  \begin{align*}
+    (x+5)(2x+1) &= 2x^2 + 11x + 5\\
+    (1)(2x^2 + 11x + 1) = 2x^2 + 11x + 1
+  \end{align*}
+  We see that $(2x^2+11x + 5)-(2x^2+11x+1) = 4$ while subtracting in the other direction gives a negative. So we conclude that
+  \[ \frac{2x^2+11x+1}{x+5} < 2x + 1.\]
+\end{example}
+
+\begin{example}
+  Let us compare $r_1(x) = \frac{-x^2+3}{-2x+1}$ and $r_2(x) = \frac{2x+1}{2x-1}$. First, we multiply $r_1(x)$ by $-1/-1$ to rewrite it as
+  $r_1(x) = \frac{x^2-3}{2x-1}$. Now we cross multiply and obtain
+  \begin{align*}
+    (2x-1)(x^2-3) &= 2x^3-x^2-6x +4\\
+    (2x-1)(2x+1) &= 4x^2-1
+  \end{align*}
+  We see that $(2x^3-x^2-6x +4)- (4x^2-1) = 2x^3-5x^2-6x+3$ has positive leading coefficient. So we conclude that
+  \[r_2(x) = \frac{2x+1}{2x-1} < r_1(x) = \frac{-x^2+3}{-2x+1}. \]
+\end{example}
+
+\begin{enumerate}
+    \setcounter{enumi}{3}
+  \item It is important to play with this ordering a bit to get used to it. Try to work through these examples in small groups. For each pair $r_1(x)$ and $r_2(x)$
+    determine whether $r_1(x) < r_2(x)$, $r_1(x)=r_2(x)$ or $r_2(x) < r_1(x)$.
+    \begin{enumerate}
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x+5}{3x^2+x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x+6}{3x^2+x-2}$.
+        \vspace{1.5in}
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{3x^2+x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x+5}{3x^2+x-2}$.
+        \vspace{1.5in}
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{3x-2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x^2+5}{3x^2-2}$.
+        \vspace{1.5in}
+      \item  $r_1(x) = \frac{p_1(x)}{q_1(x)} = \frac{x^2+5}{-3x+2}$ and $r_2(x) = \frac{p_2(x)}{q_2(x)}=\frac{x^2+5}{3x-2}$.
+        \vspace{1.5in}
+    \end{enumerate}
+\end{enumerate}
+
+The purpose of this opening task is to give you a sense of how the field $\mathbb{Q}(x)$ works. The fact that these operations make it an ordered field is
+a theorem which is not difficult to prove, but is somewhat tedious. So here we simply state it without proof.
+
+\begin{theorem*}
+  The set of rational functions over the rationals,
+\[ \mathbb{Q}(x) = \left\{ \frac{p(x)}{q(x)} \mid p(x) \text{ and }q(x)\text{ are polynomials with rational coefficients} \right\}.\]
+together with the operations of addition ($+$) and multiplication ($\cdot$) defined above form a field. If we add in the ordering $<$ defined above,
+$\mathbb{Q}(x)$ is an ordered field.
+\end{theorem*}
+
+We opened this inquiry by talking about integral elements. Here, in $\mathbb{Q}(x)$, the integral elements are of the form
+\[ q_n(x) = n \]
+for $n\in\mathbb{N}$. (Notice that these are degree 0 polynomials, and are also rational functions since $q_n(x) = \frac{n}{1}$.) As your final task in
+this inquiry, prove the following facts:
+
+\begin{enumerate}
+    \setcounter{enumi}{4}
+  \item Suppose that $r(x) =  x^2 + 2x + 3$. Prove that $q_{500}(x) < r(x)$
+        \vspace{1.5in}
+  \item Suppose that $r(x) =  2x + 3$. Prove that for any $n\in\mathbb{N}$, $q_n(x) < r(x)$.
+        \vspace{1.5in}
+  \item Suppose that $r(x) =  a_mx^m + a_{m-1}x_{m-1}+\cdots a_1x + a_0$ is an element
+    of $\mathbb{Q}(x)$ with $m \geq 1$. Prove that if $a_m > 0$, then $q_{500}(x) < r(x)$
+        \vspace{1.5in}
+  \item Suppose that $r(x) =  a_mx^m + a_{m-1}x_{m-1}+\cdots a_1x + a_0$ is an element
+    of $\mathbb{Q}(x)$ with $m \geq 1$. Prove that for any $n\in\mathbb{N}$, if $a_m > 0$, then $q_{n}(x) < r(x)$
+        \vspace{1.5in}
+\end{enumerate}
+
+You've just shown that in $\mathbb{Q}(x)$ every polynomial with degree at least 1 and with positive leading coefficient is greater than every integral
+element. 
+\end{task}\newpage
 
 
 \part{Three Famous Problems about Constructible Numbers}
