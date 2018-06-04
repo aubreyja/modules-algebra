@@ -1501,9 +1501,51 @@ element.
 
 \part{Three Famous Problems about Constructible Numbers}
 
-Question: Given a line segment of length 1 in the plane, for what values of $a$ can we construct a line segment of length $a$ using compass and ruler constructions?
+Now we turn to a collection of problems considered by ancient Greek mathematicians, namely compass-and-straightedge constructions. 
+Here, by the word ``compass'' we do not mean the navigation tool! The way we're using the word, a compass is a drawing instrument 
+that can be used for inscribing circles or arcs. By a ``straightedge'' we basically mean a ruler with no markings on it. 
 
-\begin{definition}[Fundamental Constructions] The following compass and ruler constructions are known as our three fundamental constructions.
+\begin{center}
+\includegraphics{Images/straight_edge_compass_wikipedia.jpg}
+\end{center}
+
+The ancient Greeks were curious about the following question which gave rise to these problems: Given a line segment of length 1 in the plane, 
+for what values of $a$ can we construct a line segment of length $a$ using compass and straightedge constructions?
+
+The Greeks discovered how to construct sums, differences, products, ratios, and square roots of given lengths. They could also construct half of a 
+given angle; that is, they could ``bisect'' any angle. We will see these constructions below, and there are many other interesting constructions
+they figured out.
+
+However, there were some constructions they could not figure out. For example, they could not figure out how to trisect an arbitrary angle. That is, they could
+not construct one third of a given angle except in some particular cases. They could not ``square a circle.'' That is, they could not figure out how to 
+construct a square with the same area as a given circle.  Nor could they ``double a cube.'' That is, they could not figure out how to construct the 
+side of a cube whose volume would be twice the volume of a cube with a given side.
+
+The interest in these problems from our point of view is that it took the development of the theory of fields to solve these problems. In 1837 a
+mathematician named Pierre Wantzel published a proof of the impossibility of trisecting an arbitrary angle or of doubling the volume of a cube, based on the 
+impossibility of constructing cube roots of lengths. Then in 1882 Lindemann showed that $\pi$ is a transcendental number, and thus that it is impossible by 
+straightedge and compass to construct a square with the same area as a given circle. These proofs are beautiful uses of the theory of fields, and we will
+explore them below.
+
+\subsection{The Rules of the Game}
+
+In the past, compasses were used in mathematics, drafting, navigation and other purposes. Physical compasses are usually made of metal or 
+plastic, and consist of two parts connected by a hinge which can be adjusted to allow the changing of the radius of the circle drawn. Typically 
+one part has a spike at its end, and the other part a pencil or pen. Unlike physical compasses, we will assume our compasses can be opened arbitrarily 
+wide. We will also assume that our compasses have no markings on them to measure angles or anything else. 
+
+We will assume our straightedges are infinitely long, and has no markings on them. Our straightedges can only be used to draw a line segment between 
+two points or to extend an existing segment.  
+
+Our constructions must be exact. Sometimes you'll be tempted to ``eyeball'' it by looking at the construction and guessing at its accuracy, 
+or using some form of measurement, such as the units of measure on a ruler. This is forbidden, and getting close does not count as a solution.
+
+Compass and striaightedge construction must terminate. That is, they must have a finite number of steps, and cannot be the limit of ever closer 
+approximations.
+
+\subsection{The Fundamental Constructions}
+
+\begin{definition}[Fundamental Constructions] The following compass and straightedge constructions are known as our three fundamental constructions.
   \begin{enumerate}
     \item Given two points, we may draw a line through them, extending it indefinitely in each direction.
     \item Given two points, we may draw the line segment connecting them.
