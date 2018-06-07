@@ -1521,10 +1521,10 @@ not construct one third of a given angle except in some particular cases. They c
 construct a square with the same area as a given circle.  Nor could they ``double a cube.'' That is, they could not figure out how to construct the 
 side of a cube whose volume would be twice the volume of a cube with a given side.
 
-The interest in these problems from our point of view is that it took the development of the theory of fields to solve these problems. In 1837 a
-mathematician named Pierre Wantzel published a proof of the impossibility of trisecting an arbitrary angle or of doubling the volume of a cube, based on the 
-impossibility of constructing cube roots of lengths. Then in 1882 Lindemann showed that $\pi$ is a transcendental number, and thus that it is impossible by 
-straightedge and compass to construct a square with the same area as a given circle. These proofs are beautiful uses of the theory of fields, and we will
+The interest in these problems from our point of view is that it took the development of the theory of fields to solve these problems. It was not until
+the early 19th century that it was proved to be impossible to trisect an arbitrary angle or of double the volume of a cube using straightedge and compass constructions. 
+Then in the late 19th century it was shown that $\pi$ is a transcendental number, and so it is impossible to use straightedge and compass 
+to construct a square with the same area as a given circle. These proofs are beautiful uses of the theory of fields, and we will
 explore them below.
 
 \subsection{The Rules of the Game}
@@ -1540,10 +1540,12 @@ two points or to extend an existing segment.
 Our constructions must be exact. Sometimes you'll be tempted to ``eyeball'' it by looking at the construction and guessing at its accuracy, 
 or using some form of measurement, such as the units of measure on a ruler. This is forbidden, and getting close does not count as a solution.
 
-Compass and striaightedge construction must terminate. That is, they must have a finite number of steps, and cannot be the limit of ever closer 
-approximations.
+Finally, compass and striaightedge construction must have a finite number of steps.
 
 \subsection{The Fundamental Constructions}
+
+We begin with the three fundamental constructions with which we will build all of our more sophisticated constructions. We will assume that these
+are the only operations we can perform with our straightedge and compass.
 
 \begin{definition}[Fundamental Constructions] The following compass and straightedge constructions are known as our three fundamental constructions.
   \begin{enumerate}
@@ -1553,17 +1555,57 @@ approximations.
   \end{enumerate}
 \end{definition}
 
-\begin{example}
-  Using the fundamental constructions, we can bisect any angle.
-\end{example}
+We now build up some important basic constructions using the fundamental constructions.
 
 \begin{example}
-  Using the fundamental constructions, we can construct angles of $30^\circ$ and $60^\circ$.
+  Using the fundamental constructions, we can bisect any angle. 
+  \begin{center}
+    \includegraphics[scale=.75]{Images/bisect_angle_1.png}
+  \end{center}
+
+  \begin{enumerate}
+    \item We begin by opening the compass to some fixed length, putting the point of the compass at the vertex of the angle, and drawing an arc through the two 
+      rays formed by the angle. This determines a point on each ray, equidistant from the vertex. (This uses the third fundamental construction.)
+  \begin{center}
+    \includegraphics[scale=.75]{Images/bisect_angle_2.png}
+  \end{center}
+  \item Keeping the compass at a fixed length (but perhaps different from the length in step 1), we put the compass point at each point formed in step 1
+    and create two intersecting arcs between the two rays of our angle. (This uses the third fundamental construction.)
+  \begin{center}
+    \includegraphics[scale=.75]{Images/bisect_angle_3.png}
+  \end{center}
+  \item Using the straightedge, we draw a ray from the vertex of the angle through the point of intersection of the two arcs. This ray bisects the given angle.
+    (This uses the first fundamental construction.)
+  \begin{center}
+    \includegraphics[scale=.75]{Images/bisect_angle_4.png}
+  \end{center}
+  \end{enumerate}
 \end{example}
 
-\begin{example}
+\subsection{Inquiry: Construct Angles of $30^\circ$ and $60^circ$}
+\begin{task}
+
+Follow these steps to construct angles of $30^\circ$ and $60^circ$ using only the fundamental constructions.
+\begin{enumerate}
+  \item Using the straightedge, draw a line segment of some length.
+  \item Open the compass to the length of this segment.
+  \item Put the point of the compass at one end of the segment and draw an arc over the center of the line segment.
+  \item Put the point of the compass at the other end of the segment and draw another arc over the center of the line segment.
+  \item Draw a line segment from one end of the original segment to the intersection point of the two arcs.
+\end{enumerate}
+
+The angle between the two line segments is $60^\circ$ because the triangle formed by the two endpoints of the original line segment and the
+intersection point of the arcs is an equilateral triangle. You can now construct a $30^\circ$ angle by bisecting the $60^\circ$ angle.
+\end{task}
+
+\subsection{Inquiry: Construct a line parallel to a given line}
+\begin{task}
   Using the fundamental constructions, we can draw a line parallel to a given line through any point not on the given line.
-\end{example}
+
+  \begin{enumerate}
+    \item Begin with a line and a point not on the line.
+  \end{enumerate}
+\end{task}
 
 \subsection{Constructible Lengths}
 
