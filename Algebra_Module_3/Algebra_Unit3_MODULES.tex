@@ -1603,16 +1603,40 @@ intersection point of the arcs is an equilateral triangle. You can now construct
   Using the fundamental constructions, we can draw a line parallel to a given line through any point not on the given line.
 
   \begin{enumerate}
-    \item Begin with a line and a point not on the line.
+    \item Begin with a line $\ell$ and a point $P$ not on the line.
+    \item Mark an arbitrary point $A$ on the given line.
+    \item Draw a line through the new point $A$ and the original given point $P$.
+    \item Place the point of the compass at point $A$ and draw an arc from line $\ell$ which intersects the new line, say at point $B$.
+    \item Without changing the width of the compass, place the point of the compass at point $P$ and draw a (rough) copy of the first arc but centered at $P$. Be sure it intersects the new line. Let's call that point $C$.
+    \item Open the compass to the distance from point $P$ to point $A$.
+    \item Place the point of the compass at point $A$ and draw an arc which intersects 
+    \item FIx this!
   \end{enumerate}
 \end{task}
 
 \subsection{Constructible Lengths}
 
+Now we consider the question of what segment lengths we can construct, assuming we have in hand some given segment lengths. The next lemma essentially
+says that all rational numbers are constructible.
+
 \begin{lemma}
-  Given segments of length 1, $a$ and $b$, it is possible to construct segments of lengths $a+b$, $a-b$ (when $a>b$), $ab$, and $a/b$.
+  Given segments of length 1, $a$ and $b$, it is possible to construct segments of lengths $a+b$, $b-a$ (when $b>a$), $ab$, and $a/b$.
   \label{lemma: rational constructions}
 \end{lemma}
+\begin{proof}
+  It is easy to see how to construct segments of length $a+b$ and $a-b$, given segments of length $a$ and $b$. For the sum, suppose we have segments of 
+  length $a$ and $b$. Extend the segment of length $a$ to a line using the first fundamental construction. Then set the compass with to the length $b$,
+  put the point at one endpoint of the segment of length $a$, and use the compass mark a point on the line a distance of $b$ from that endpoint in the direction
+  opposite the other endpoint. The resulting long segment has length $a+b$.
+  \begin{center}
+    \includegraphics[scale=.1]{Images/a_plus_b.png}
+  \end{center}
+  For $b-a$ when $b>a$, draw a segement of length $a$ starting from one endpoint of the segment of length $b$, toward the other endpoint of that 
+  segment. What's left is a segment of length $b-a$.
+  \begin{center}
+    \includegraphics[scale=.1]{Images/b_minus_a.png}
+  \end{center}
+\end{proof}
 
 \begin{definition}
   A real number $a$ is constructible if given initially a segment of length $1$, it is possible to construct a segment of length $|a|$.
