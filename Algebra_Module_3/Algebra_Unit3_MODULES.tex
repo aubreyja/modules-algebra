@@ -1557,6 +1557,7 @@ are the only operations we can perform with our straightedge and compass.
 
 We now build up some important basic constructions using the fundamental constructions.
 
+
 \begin{example}
   Using the fundamental constructions, we can bisect any angle. 
   \begin{center}
@@ -1581,6 +1582,11 @@ We now build up some important basic constructions using the fundamental constru
   \end{center}
   \end{enumerate}
 \end{example}
+
+\subsection{Inquiry: Bisect a line segement}
+\begin{task}
+  TODO
+\end{task}
 
 \subsection{Inquiry: Construct Angles of $30^\circ$ and $60^circ$}
 \begin{task}
@@ -1614,10 +1620,31 @@ intersection point of the arcs is an equilateral triangle. You can now construct
   \end{enumerate}
 \end{task}
 
+\subsection{Inquiry: Construct a line perpendicular to a given line}
+\begin{task}
+  Using the fundamental constructions, we can draw a line perpendicular to a given line at a point on the line.
+
+  \begin{enumerate}
+    \item TODO
+  \end{enumerate}
+\end{task}
+
 \subsection{Constructible Lengths}
 
 Now we consider the question of what segment lengths we can construct, assuming we have in hand some given segment lengths. The next lemma essentially
 says that all rational numbers are constructible.
+
+Before stating and proving an important lemma, we have an inquiry which asks you to do a crucial step in one part of the proof.
+
+\subsubsection{Inquiry: Using Similar Triangles}
+\begin{task}
+  Consider the following image:
+  \begin{center}
+    \includegraphics[scale=.1]{Images/a_over_b.png}
+  \end{center}
+  Here one long side of the triangle has length $a$, and a portion of that side is marked as having length $x$. Another side of the
+  triangle has length $b$, and a portion of that side is marked as having length $1$. Use similar triangles to prove that in this situation $x = \frac{a}{b}$.
+\end{task}
 
 \begin{lemma}
   Given segments of length 1, $a$ and $b$, it is possible to construct segments of lengths $a+b$, $b-a$ (when $b>a$), $ab$, and $a/b$.
@@ -1636,11 +1663,55 @@ says that all rational numbers are constructible.
   \begin{center}
     \includegraphics[scale=.1]{Images/b_minus_a.png}
   \end{center}
+  Now suppose that we have given segments of lengths $a$ and $b$. How can we construct a segment of length $ab$? This is a little more involved and we will
+  do it in multiple steps. First, we pick a point and draw segments of length $a$ and length $1$ emanating from that point with some angle $\theta$ between
+  them with $0^\circ < \theta < 180^\circ$
+  \begin{center}
+    \includegraphics[scale=.75]{Images/ab_1.png}
+  \end{center}
+  Now we construct two segments. One segment joints the two non-overlapping endpoints of our segment of length $a$ and our segment of length $1$. We also construct
+  a segment of length $b$ adjacent to the segment of length $1$ and along the line determined by that segment.
+  \begin{center}
+    \includegraphics[scale=.75]{Images/ab_2.png}
+  \end{center}
+  \begin{center}
+    \includegraphics[scale=.75]{Images/ab_3.png}
+  \end{center}
+  \begin{center}
+    \includegraphics[scale=.75]{Images/ab_4.png}
+  \end{center}
+  This shows that a segment of length of $ab$ can be constructed if we are given segments of length $a$, $b$, and $1$. As for $a/b$, the diagram
+  in the inquiry above shows that a segment of length $a/b$ can be constructed.
+  \begin{center}
+    \includegraphics[scale=.1]{Images/a_over_b.png}
+  \end{center}
+  To complete the proof for this case, you must tie up two loose ends. First, explain how to construct this diagram using the fundamental
+  constructions. Second, the diagram assumes that $b>1$. We need a diagram which handles the case $b \leq 1$. The tieing of these loose ends
+  is left to the reader.
 \end{proof}
 
 \begin{definition}
   A real number $a$ is constructible if given initially a segment of length $1$, it is possible to construct a segment of length $|a|$.
 \end{definition}
+
+\subsubsection{Inquiry: Constructing Square Roots}
+
+\begin{task}
+  Here we suppose that we are given segments of length $1$ and length $a$, and we construct a segment of length $\sqrt{a}$. To do so, follow these
+  steps.
+  \begin{enumerate}
+    \item Construct a segment of length $a+1$. Let $P$ be the point at which the segment of length $a$ meets the segment of length $1$.
+    \item At point $A$ construct a line $\ell$ perpendicular to the segment.
+    \item Bisect the segment, and mark its midpoint.
+    \item Place the point of the compass at the midpoint of the segment, open the compass to half the width of the segment, and draw a circle $C$
+      centerted at the midpoint whose radius is half the length of the segment.
+    \item The circle $C$ intersects the perpendicular bisector $\ell$ at two points. Pick one of them to work with, and let's call it $Q$.
+    \item Let $x$ be the distance from one endpoint of the segment to $Q$ and let $y$ be the distance from $Q$ to the other endpoint. Let $z$ be
+      the distance from the segment to $Q$.
+    \item There are three right triangles in your picture. Write down the corresponding three instances of the Pythagorean theorem.
+    \item Use these equations to show that $z=\sqrt{a}$.
+  \end{enumerate}
+\end{task}
 
 \begin{lemma}
   Given segments of length $1$ and $a$, a segment of length $\sqrt{a}$ may be constructed.
