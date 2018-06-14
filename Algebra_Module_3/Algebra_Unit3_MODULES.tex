@@ -1585,13 +1585,22 @@ We now build up some important basic constructions using the fundamental constru
 
 \subsection{Inquiry: Bisect a line segement}
 \begin{task}
-  TODO
+  To bisect a line segment, follow these steps:
+  \begin{enumerate}
+    \item Open the compass to a width greater than half the length of the segment.
+    \item Place the point of the compass at one endpoint of the segment and draw an arc which passes over the midpoint of the segment.
+    \item Do the same with the point at the other endpoint of the segment without changing the width of the compass.
+    \item The arcs should intersect at two points. The line between those points bisects the segment. 
+  \end{enumerate}
+  \begin{center}
+    \includegraphics[scale=.75]{Images/bisect_segment.png}
+  \end{center}
 \end{task}
 
-\subsection{Inquiry: Construct Angles of $30^\circ$ and $60^circ$}
+\subsection{Inquiry: Construct Angles of $30^\circ$ and $60^\circ$}
 \begin{task}
 
-Follow these steps to construct angles of $30^\circ$ and $60^circ$ using only the fundamental constructions.
+Follow these steps to construct angles of $30^\circ$ and $60^\circ$ using only the fundamental constructions.
 \begin{enumerate}
   \item Using the straightedge, draw a line segment of some length.
   \item Open the compass to the length of this segment.
@@ -1646,10 +1655,10 @@ Before stating and proving an important lemma, we have an inquiry which asks you
   triangle has length $b$, and a portion of that side is marked as having length $1$. Use similar triangles to prove that in this situation $x = \frac{a}{b}$.
 \end{task}
 
-\begin{lemma}
+\begin{theorem}
   Given segments of length 1, $a$ and $b$, it is possible to construct segments of lengths $a+b$, $b-a$ (when $b>a$), $ab$, and $a/b$.
-  \label{lemma: rational constructions}
-\end{lemma}
+  \label{theorem: rational constructions}
+\end{theorem}
 \begin{proof}
   It is easy to see how to construct segments of length $a+b$ and $a-b$, given segments of length $a$ and $b$. For the sum, suppose we have segments of 
   length $a$ and $b$. Extend the segment of length $a$ to a line using the first fundamental construction. Then set the compass with to the length $b$,
@@ -1694,6 +1703,29 @@ Before stating and proving an important lemma, we have an inquiry which asks you
   A real number $a$ is constructible if given initially a segment of length $1$, it is possible to construct a segment of length $|a|$.
 \end{definition}
 
+This definition together with Theorem \ref{theorem: rational constructions} allow us to conclude that every rational number is constructible. How is this?
+It should be clear that if $1$ is constructible, then so is $2$. After all, it's just $1+1$, and if we can construct a segment of length one, then
+we can construct two of them side-by-side. And similarly, we can construct segments with the length of any positive natural number. This allows us
+to conclude that every integer is constructible. But ratios of constructible numbers are constructible, so we get that every rational number is 
+construcitble. So, we have that if $1$ is constructible, then so is every natural number. Well, is $1$ a constructible length? Well, recall that our
+straightedge is not a ruler - there are no distance marks. In particular, the length of ``$1$'' is not given to us. We are allowed to decide it. That is,
+we are free to just create a segment of any length and call it our unit length. Then every other length is measured relative to that. We can create
+a segment twice its length, three times its length,etc. Then we're off to the races and we can construct any rational length.
+
+This is all great, but suggests the question of whether or not some non-rational numbers are constructible.  The answer is yes, but remember that to 
+show that a particular non-rational number is constructible, we have to construct a line segment of that length.
+
+\subsubsection{Inquiry: Remember the Equilateral Triangle}
+\begin{task}
+  Above we showed that we could construct angles of $60^\circ$ and $30^\circ$. We did that by
+  \begin{enumerate}
+    \item constructing an equilateral triangle, and then
+    \item bisecting one of the angles in the triangle.
+  \end{enumerate}
+  Can we generate any constructible numbers from this construction? Use your knowledge of compass and straightedge constructions and trigonometry
+  to find some non-rational constructible numbers from this example.
+\end{task}
+
 \subsubsection{Inquiry: Constructing Square Roots}
 
 \begin{task}
@@ -1701,13 +1733,25 @@ Before stating and proving an important lemma, we have an inquiry which asks you
   steps.
   \begin{enumerate}
     \item Construct a segment of length $a+1$. Let $P$ be the point at which the segment of length $a$ meets the segment of length $1$.
-    \item At point $A$ construct a line $\ell$ perpendicular to the segment.
+  \begin{center}
+    \includegraphics[scale=.75]{Images/square_roots_1.png}
+  \end{center}
+    \item At point $P$ construct a line $\ell$ perpendicular to the segment.
     \item Bisect the segment, and mark its midpoint.
-    \item Place the point of the compass at the midpoint of the segment, open the compass to half the width of the segment, and draw a circle $C$
+  %\begin{center}
+  %  \includegraphics[scale=.75]{Images/square_roots_2.png}
+  %\end{center}
+    \item Place the point of the compass at the midpoint of the segment, open the compass to half the width of the segment, and draw a circle 
       centerted at the midpoint whose radius is half the length of the segment.
-    \item The circle $C$ intersects the perpendicular bisector $\ell$ at two points. Pick one of them to work with, and let's call it $Q$.
+    \item The circle intersects the perpendicular bisector $\ell$ at two points. Pick one of them to work with, and let's call it $Q$.
+  \begin{center}
+    \includegraphics[scale=.75]{Images/square_roots_3.png}
+  \end{center}
     \item Let $x$ be the distance from one endpoint of the segment to $Q$ and let $y$ be the distance from $Q$ to the other endpoint. Let $z$ be
       the distance from the segment to $Q$.
+  \begin{center}
+    \includegraphics[scale=.75]{Images/square_roots_4.png}
+  \end{center}
     \item There are three right triangles in your picture. Write down the corresponding three instances of the Pythagorean theorem.
     \item Use these equations to show that $z=\sqrt{a}$.
   \end{enumerate}
@@ -1717,38 +1761,123 @@ Before stating and proving an important lemma, we have an inquiry which asks you
   Given segments of length $1$ and $a$, a segment of length $\sqrt{a}$ may be constructed.
   \label{lemma: sqrt can be constructed}
 \end{lemma}
+\begin{proof}
+  You've just proved this in the inquiry above.
+\end{proof}
+
+Notice that, for example, since 1 is constructible, so is 2. This theorem allows us to conclude that $\sqrt{2}$ is constructible. So is
+$\sqrt{3}, \sqrt{5}$, etc.
+
+\subsection{Inquiry: Am I Construcible?}
+\begin{task}
+  In this task, you will be able to conclude based on our previous work that some of the numbers listed are constructible. For others, you will not 
+  be able to draw that conclusion. Below, we'll present a theorem that exactly characterizes which numbers are construcible and which are not. Right now
+  you can only identify if something is constructible. Showing something is not constructible is harder. For each number listed below indicate ``Constructible''
+  or ``No Conclusion.'' If the number is constructible, explain how you would construct it given our previous constructions.
+  \begin{itemize}
+    \item $100$
+    \item $\frac{3}{2}$
+    \item $\sqrt{7}$
+    \item $\sqrt[3]{7}$
+    \item $3 + \sqrt{7}$
+    \item $\sqrt{3 + \sqrt{7}}$
+    \item $\sqrt{\sqrt{\sqrt{3+\sqrt{7}}}}$
+    \item $\sqrt[4]{3 + \sqrt{7}}$
+    \item $\sqrt[5]{3 + \sqrt{7}}$
+    \item $\sqrt[6]{3 + \sqrt{7}}$
+    \item $\sqrt[7]{3 + \sqrt{7}}$
+    \item $\sqrt[n]{3 + \sqrt{7}}$, where $n$ is even.
+    \item $\sqrt[n]{3 + \sqrt{7}}$, where $n$ is odd.
+    \item $\pi$
+  \end{itemize}
+\end{task}
 
 \subsection{Quadratic Extensions}
+
+Now we come to the important relationship between constructible numbers and field extensions, particularly so called ``quadratic extensions.'' First, recall
+the following result.
 
 \begin{theorem}
   If $\mathbb{F}$ is a field, then so is $\mathbb{F}(\sqrt{k})$.
   \label{theorem: quadratic extensions of fields are fields}
 \end{theorem}
+\begin{proof}
+  This was proved as homework problem XXXX.
+\end{proof}
+
+First we give a sufficient condition for a number to be constructible.
 
 \begin{theorem}
   A number $a$ is constructible if there is a finite sequence of fields $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ with
   $a\in\mathbb{F}_N$ and such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$.
   \label{theorem: constructible if in sequence of quadratic extensions}
 \end{theorem}
+\begin{proof}
+  The proof of this is by induction on $N$. First consider the case where $N=0$. Since $\mathbb{F}_0=\mathbb{Q}$ and we know that every rational number
+  is constructible, it follows that the theorem is true for $N=0$. Suppose now that we have a sequence of field extensions
+  \[ \mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N \]
+  and that each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$. Suppose further that
+  every number in $\mathbb{F}_N$ is constructible, and that $\mathbb{F}_{N+1}$ is a quadratic extension of $\mathbb{F}_N$. In particular, let us suppose that
+  $F_{N+1}=\mathbb{F}_N(\sqrt{k})$ where $k \in \mathbb{F}_N$. Suppose that $a \in \mathbb{F}_{N+1}$. Then 
+  \[ a = b + c\sqrt{k}\]
+  where $b,c\in\mathbb{F}_N$. By hypothesis, every number in $\mathbb{F}_N$ is contructible. So $b$ and $c$ are construcible. Since $k\in\mathbb{F}_N$ it is also
+  constructible. We know that we can construct the square root of any constructible number, so it follows that $\sqrt{k}$ is constructible. Products of
+  constructible numbers are constructible, so $c\sqrt{k}$ is constructible. Sums of constructible numbers are constructible, so 
+  \[ a = b + c\sqrt{k} \]
+  is constructible. It follows then that every number in $\mathbb{F}_{N+1}$ is constructible. 
+  
+  Therefore it follows by induction that for any $N$ if there is a finite sequence of fields 
+  $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ 
+  such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$ and $a\in\mathbb{F}_N$, then $a$ is constructible. 
+\end{proof}
 
 \begin{definition}
-  If $\mathbb{F}$ is a field, the plane of $\mathbb{F}$ will denote the set of all points $(x,y)$ in the Cartesian plane so that $x$ and $y$ are in $\mathbb{F}$. By a line in
-  $\mathbb{F}$ we mean a line passing through two points in the plane of $\mathbb{F}$. By a circle in $\mathbb{F}$ we mean a circle with both its center and some point on its
-  circumference in the plane of $\mathbb{F}$.
+  If $\mathbb{F}$ is a field, the plane of $\mathbb{F}$ will denote the set of all points $(x,y)$ in the Cartesian plane so that $x$ and $y$ are 
+  in $\mathbb{F}$. By a line in $\mathbb{F}$ we mean a line passing through two points in the plane of $\mathbb{F}$. By a circle in $\mathbb{F}$ we 
+  mean a circle with both its center and some point on its circumference in the plane of $\mathbb{F}$.
 \end{definition}
 
-Note that any fundamental construction using only points in the plane of a field $\mathbb{F}$ involves the construction of a line or a cube in $\mathbb{F}$.
-TODO: Show this for a circle
+Note that any fundamental construction using only points in the plane of a field $\mathbb{F}$ involves the construction of a line, line segment, 
+or a circle in $\mathbb{F}$. To see this, recall the three fundamental constructions:
+  \begin{enumerate}
+    \item Given two points, we may draw a line through them, extending it indefinitely in each direction.
+    \item Given two points, we may draw the line segment connecting them.
+    \item Given a point and line segment, we may draw a circle with center at the point and radius equal to the length of the line segment.
+  \end{enumerate}
+If we are using only points in the plane of $\mathbb{F}$, then, in particular, the two points we start with in the first two fundamental constructions
+must be points in the plane of $\mathbb{F}$. Thus the line or line segment constructed is in $\mathbb{F}$, as defined above. What about the third
+fundamental construction? In this case, the center of the circle $(x,y)$ must be in the plane of $\mathbb{F}$ and the length of the line segment $r$ 
+that determines the radius must be in $\mathbb{F}$. But then the point $(x+r,y)$ is on the circle and is also in the plane of $\mathbb{F}$.
 
 \begin{lemma}
   Every line in $\mathbb{F}$ can be represented by an equation of the form $ax+by+c = 0$ with $a,b,c\in\mathbb{F}$
   \label{lemma: line in F}
 \end{lemma}
+\begin{proof}
+  Suppose that $(x_1,y_1)$ and $(x_2,y_2)$ are points on a line in $\mathbb{F}$ and that these two points are in the plane of $\mathbb{F}$ so that
+  $x_1, x_2,y_1,y_2$ are all in $\mathbb{F}$.
+  Then, if the line is not vertical, then the slope of the line is
+  \[ m = \frac{y_2-y_1}{x_2-x_1}. \]
+  That number $m$ is in $\mathbb{F}$ if all of $x_1, x_2, y_1$, and $y_2$ are. The point-slope equation of the line is then
+  \[ y-y_1 = m(x-x_1).\]
+  We can rewrite this as $ax+by+c=0$ where $a=m$, $b=-1$, and $c=y_1-x_1$, and these numbers $a,b,c$ are all in $\mathbb{F}$ if $x_1, x_2, y_1$, and $y_2$
+  are. If the line is vertical, then both of the points are of the form $(c,y_1)$, $(c,y_2)$ for some fixed $c$ in the $x$-coordinate and the equation of
+  the line is $x=c$, or, if you like, $x-c=0$.
+\end{proof}
 
 \begin{lemma}
   Every circle in $\mathbb{F}$ can be represented by an equation of the form $x^2 + y^2 + ax + by +c = 0$ with $a,b,c\in\mathbb{F}$.
   \label{lemma: circle in F}
 \end{lemma}
+\begin{proof}
+  The proof of this is the same idea as the proof of Lemma \ref{lemma: line in F}. We start with the center of the circle $(x_0,y_0)$ which is
+  assumed to be in the plane of $\mathbb{F}$ and a point on the circumference of the circle $(x_1,y_1)$ which is also assumed to be in the 
+  plane of $\mathbb{F}$. Then the radius of the circle is
+  \[ r = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}\]
+  which is in not necessarily in $\mathbb{F}$, but $r^2$ definitely is. The equation of the circle is then
+  \[ (x-x_0)^2 + (y-y_0)^2 = r^2.\]
+  Expanding the terms on the left hand side and rearranging can clearly get us an equation of the form $x^2 + y^2 + ax + by +c = 0$ with $a,b,c\in\mathbb{F}$.
+\end{proof}
 
 \begin{theorem}
   \begin{enumerate}
@@ -1760,6 +1889,42 @@ TODO: Show this for a circle
   \end{enumerate}
   \label{theorem: intersections}
 \end{theorem}
+\begin{proof}
+ You can probably imagine how this is proved. For item (1) we start with two distinct, nonparallel lines. As above, these have equations
+ \begin{align*}
+   a_1x+b_1y+c_1&=0\\
+   a_2x+b_2y+c_2&=0
+ \end{align*}
+ $a_1,b_1,c_1,a_2,b_2,c_2\in\mathbb{F}$. Now we solve for the intersection point. The lines must have exactly one intersection point because they are
+ distinct, nonparallel lines, and that point will have coordinates which use only sums, differences, products and quotients of the coefficients. Since
+ the coefficinets are in $\mathbb{F}$ and $\mathbb{F}$ is a field, it follows that each of the coordinates of the intersection point will also be
+ in $\mathbb{F}$.
+
+ The situation is similar for item (2), except now we have a line and a circle so our equations look like
+ \begin{align*}
+   a_1x+b_1y+c_1&=0\\
+   x^2 + y^2 + a_2x + b_2y +c_2 &= 0
+ \end{align*}
+ with $a_1,b_1,c_1,a_2,b_2,c_2\in\mathbb{F}$. If we simultaneously solve these two equations we'll use all ($+$, $-$, $\cdot$, $/$) of our arithemtic operations
+ but we will also likely have to do a square root. (You can either imagine this or really try it!) If no square roots are needed, then our intersection
+ point(s) are in the plane of $\mathbb{F}$. If we do need to take a square root, then our intersection points will be in the plane of a quadratic 
+ extension of $\mathbb{F}$.
+
+ In case (3) we now have two circles and our equations look like
+ \begin{align*}
+   x^2 + y^2 + a_1x + b_1y +c_1 &= 0
+   x^2 + y^2 + a_2x + b_2y +c_2 &= 0
+ \end{align*}
+ with $a_1,b_1,c_1,a_2,b_2,c_2\in\mathbb{F}$. It's not so bad to simultaneously solve these two equations. We start by subtracting the second equation from the
+ first and we get that 
+ \[ (a_1-a_2)x + (b_1-b_2)y + (c_1-c_2) = 0.\]
+ So, 
+ \[ y = \frac{c_2-c_1}{a_1-a_2} + \frac{b_2-b_1}{c_1-c_2}x.\]
+ Now we plug this into one of our original equations to get a quadratic in $x$. We can use the quadratic formula to find either zero, one or two values of $x$.
+ That means the circles intersect in zero points, one point, or two points. After we find the $x$ values we determine the $y$ values. Again, to find the
+ $x$-values we just take one square root. As a result, our intersection points will either be in the plane of $\mathbb{F}$ or the plane of a 
+ quadtric extension of $\mathbb{F}$.
+ \end{proof}
 
 \begin{theorem}
   The following statements are equivalent:
@@ -1767,9 +1932,20 @@ TODO: Show this for a circle
     \item The number $a$ is constructible.
     \item There is a finite sequence of fields $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ with
   $a\in\mathbb{F}_N$ and such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$.
-  \end{enumerate}<++>
+  \end{enumerate}
   \label{theorem: constructible iff in sequence of quadratic extensions}
 \end{theorem}
+\begin{proof}
+  We've already proved that (2) implies (1) above. And, we've done most of the hard work for (1) implies (2). To see that (1) implies (2),
+  suppose that $a$ is constructible. That means there was some finite sequence of fundamental constructions that resulted in the construction
+  of a segment of length $a$. We start with a segment of length $1$ whose endpoints we assume to have coordinates $(0,0)$ and $(1,0)$. After the
+  first fundamental construction we produce a line segment, line, or circle in the plane of $\mathbb{Q}$ or in the plane of some
+  quadratic extension of $\mathbb{Q}$. At each stage we produce new points by intersecting our existing constructions with our new constructed
+  objects. These intersection points are either in the plane of the field we are working over, or in the plane of some quadtratic extension of that
+  field. Since our construction of a segment of length $a$ must terminate after a finite number of steps, it follows that if $a$ is constructible,
+  then there is a finite sequence of fields $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ with
+  $a\in\mathbb{F}_N$ and such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$.
+\end{proof}
 
 \section{Three Famous Problems}
 
