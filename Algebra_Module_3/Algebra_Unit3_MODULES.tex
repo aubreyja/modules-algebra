@@ -1949,15 +1949,53 @@ that determines the radius must be in $\mathbb{F}$. But then the point $(x+r,y)$
 
 \section{Three Famous Problems}
 
-\subsection{Doubling the Cube}
+\subsection{Doubling a Cube}
 
-Given a line segment representing the edge of a cube, is it possible to construct another line segment representing the edge of a cube with exactly
-twice the volume of the first cube?
+The question we want to answer in this section is the following: Given a line segment representing the edge of a cube, is it possible 
+to construct another line segment representing the edge of a cube with exactly twice the volume of the first cube? Let us explore this
+question a bit in the followig inquiry.
 
-Without loss of generality we will take the length of a side of the original cube to be 1. Then the desired line segment must have length $\sqrt[3]{2}$.
+\subsubsection{Inquiry: Side Length of a Cube}
+\begin{task}
+  \begin{itemize}
+    \item Suppose that a cube, which we'll call Cube 1, has side lenth $s$, what is its volume?
+    \item Suppose that a second cube, which we'll call Cube 2, twice the volume of Cube 1. Write an expression for the volume of Cube 2.
+    \item Write an expression for the side length of Cube 2, simplified as much as possible.
+    \item Supposing $s$ is a constructible number, under other number must be constructible for the volume of Cube 2 to be constructible.
+  \end{itemize}
+  
+\end{task}
+
+So, to ``double a cube'' means the following: We begin with a cube whose side length $s$ we take to be a constructible number $s$. Of course, 
+then the volume of the cube is $V=s^3$. When we are asked to ``double'' that cube, we are being asked to use compass and straightedge 
+constructions to construct a line segment of some length $\ell$, so that $\ell^3 = 2V$, which in this case would mean $\ell^3 = 2s^3$. Of 
+course, we can solve for $\ell$ and we see that we want to construct a line segment of length $\sqrt[3]{2}s$. We know that $s$ is construcible,
+so we may conclude that we can double our cube if and only if $\{sqrt[3]{2}$ is constructible.
+
+\subsubsection{Inquiry: $\sqrt[3]{2}$}
+\begin{task}
+  Let $\mathbb{F}$ be a field, and suppose that $k\in\mathbb{F}$. Also suppose that
+  \[ \sqrt[3]{2} \in \mathbb{F}(\sqrt{k})\]
+  so that $\sqrt[3]{2} = a + b\sqrt{k}$ with $a,b \in \mathbb{F}$.
+  \begin{itemize}
+    \item Now cube both sides of the equation above.
+    \item One side of the expression should just be ``2.'' The other side will have four terms, including a term with $\sqrt{k}$ (or $k^{1/2}$) and
+      a term with $k^{3/2}$. Group those two terms together and factor out a $k^{1/2}$ to obtain an equation of the form
+      \[ 2 = c + d\sqrt{k}.\]
+    \item Why must the coefficient of $\sqrt{k}$ be zero?
+    \item Explain why this implies that $b=0$, so that $\sqrt[3]{2} = a$ for $a\in \mathbb{F}$.
+  \end{itemize}
+  Notice that this work shows that if
+  \[ \sqrt[3]{2} \in \mathbb{F}(\sqrt{k})\]
+  then in fact
+  \[ \sqrt[3]{2} \in \mathbb{F}.\]
+\end{task}
+
+In the previous inquiry you've proved:
 
 \begin{theorem}
-  Let $\mathbb{F}(\sqrt{k})$ be a quadratic extension of a field $\mathbb{F}$. If $\sqrt[3]{2}$ is in $\mathbb{F}(\sqrt{k})$, then $\sqrt[3]{2}$ must be in $\mathbb{F}$ itself.
+  Let $\mathbb{F}(\sqrt{k})$ be a quadratic extension of a field $\mathbb{F}$. If $\sqrt[3]{2}$ is in $\mathbb{F}(\sqrt{k})$, then $\sqrt[3]{2}$ 
+  must be in $\mathbb{F}$ itself.
   \label{theorem: cube root of 2}
 \end{theorem}
 
@@ -1965,11 +2003,38 @@ Without loss of generality we will take the length of a side of the original cub
   It is impossible to double the cube.
   \label{theorem: can't double cube}
 \end{theorem}
-
+\begin{proof}
+  Suppose that it were possible to double the cube. Then, as we saw above, $\sqrt[3]{2}$ would be a constructible number. By 
+  Theorem \ref{theorem: constructible iff in sequence of quadratic extensions}, there is a finite sequence of fields 
+  $\mathbb{Q} = \mathbb{F}_0 \subset \mathbb{F}_1\subset \dots \subset \mathbb{F}_N$ with
+  $\sqrt[3]{2}\in\mathbb{F}_N$ and such that for each $j$, $0\leq j \leq N-1$, $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$.
+  But now we repeatedly apply Theorem \ref{theorem: cube root of 2}: Since $\sqrt[3]{2}\in\mathbb{F}_N$ and $\mathbb{F}_N = \mathbb{F}_{N-1}(\sqrt{k})$
+  for some $k\in\mathbb{F}_{N-1}$, it follows by Theorem \ref{theorem: cube root of 2} that $\sqrt[3]{2} \in\mathbb{F}_{N-1}$. But
+  $\mathbb{F}_{N-1} = \mathbb{F}_{N-1}(\sqrt{k})$ for some $k\in\mathbb{F}_{N-2}$. So again Theorem \ref{theorem: cube root of 2} implies that
+  $\sqrt[3]{2}\in\mathbb{F}_{N-2}$. And so on until we arrive at the conclusion that $\sqrt[3]{2}\in\mathbb{Q}$. But $\sqrt[3]{2}\not\in\mathbb{Q}$, by
+  Homework XXX.
+\end{proof}
+\
 \subsection{Trisecting an Angle}
 
-TODO: We show that it is impossible to trisect an angle of $60^\circ$. If this were possible, it would be possible to construct a $20^\circ$ angle. This implies that $\cos(20^\circ)$ is constructible.
-This implies that a root of $x^3-3x  -1 =0$ is constructible.
+We saw above that it is possible to bisect any angle using compass and straightedge constructions. And, it must be admitted that it is possible to
+trisect \textit{some} angles. For example, we know that we can construct angles of $30^\circ$ and $60^\circ$. It follows that it is indeed possible
+to trisect angles with measure $3(30^\circ) = 90^\circ$ and $3(60^\circ) = 180^\circ$. But the question here is whether or not there is a general
+method for trisecting an arbitrary angle? Above we demonstrated a general method for bisecting an arbitrary angle, and that's what we want here, but
+for trisecting.
+
+It turns out that this is impossible - there is no general method for trisecting an arbitrary angle. To demonstrate this fact, we must find an angle for which
+we can show that it is impossible trisect that angle with compass and straightedge constructions. 
+
+Here we will show that it is impossible to trisect an angle of $60^\circ$. Note that if this were possible, then it would be possible to construct a 
+$20^\circ$ angle. Of course, if we could construct an angle of $20^\circ$, then we would be able to construct a segment of length $\cos(20^\circ)$. That
+is, if it is possible to trisect an angle of $60^\circ$ with compass and straightedge constructions, then it would be possible to construct a segment
+of length $\cos(20^\circ)$ with compass and straightedge constructions, meaning that $\cos(20^\circ)$ would be a constructible number.
+
+So, to show that it is impossible to trisect an angle of $60^\circ$ it suffices to show that $\cos(20^\circ)$ is not constructible. For this we will need
+some trigonometry.
+
+TODO: This implies that a root of $x^3-3x  -1 =0$ is constructible.
 
 \begin{theorem}
   If $\mathbb{F}(\sqrt{k})$ contains a root of $x^2-3x-1=0$, then so does $\mathbb{F}$.
