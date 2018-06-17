@@ -1912,7 +1912,7 @@ that determines the radius must be in $\mathbb{F}$. But then the point $(x+r,y)$
 
  In case (3) we now have two circles and our equations look like
  \begin{align*}
-   x^2 + y^2 + a_1x + b_1y +c_1 &= 0
+   x^2 + y^2 + a_1x + b_1y +c_1 &= 0\\
    x^2 + y^2 + a_2x + b_2y +c_2 &= 0
  \end{align*}
  with $a_1,b_1,c_1,a_2,b_2,c_2\in\mathbb{F}$. It's not so bad to simultaneously solve these two equations. We start by subtracting the second equation from the
@@ -2034,20 +2034,138 @@ of length $\cos(20^\circ)$ with compass and straightedge constructions, meaning 
 So, to show that it is impossible to trisect an angle of $60^\circ$ it suffices to show that $\cos(20^\circ)$ is not constructible. For this we will need
 some trigonometry.
 
-TODO: This implies that a root of $x^3-3x  -1 =0$ is constructible.
+\subsubsection{Inquiry: Remember Your Trig! (Or look it up.)}
+\begin{task}
+  Our goal in this inquiry is to find a nice polynomial which has as one of its roots the value $\cos(20^\circ)$. We begin by considering
+  \[ \cos(3\theta).\]
+  Even though we really want to find out something about $\cos(20^\circ)$, we begin by considering $\cos(3\theta)$ because $3(20^\circ)=60^\circ$ and we
+  know the cosine of $60^\circ$. So, we'll use trig identities to write $\cos(3\theta)$ in terms of $\cos(\theta)$.
+
+  First let us assemble our arsenal:
+      \begin{enumerate}
+        \item[A.] Write down the most well know trig identity - the one that hopefully know one in class needs to look up. You know the \textit{one}.
+        \item[B.] There are a few well-known version of the identify for $\cos(2\theta)$. We want the one that looks a bit like the previous identity, but
+          with a minus sign. (And be sure you have the order of the subtraction correct!)
+        \item[C.] Now write down the most common identity for $\sin(2\theta)$.
+        \item[D.] Write down the identify for $\cos(\alpha + \beta)$.
+      \end{enumerate}
+  Now fill in the following steps:
+  \begin{enumerate}
+    \item By the sum formula for cosine (identity D above):
+      \begin{align*}
+       \cos(3\theta) &= \cos(2\theta + \theta)\\
+                     &=\underline{\hspace{4in}}
+      \end{align*}
+    \item In the formula above we see an instance of $\cos(2\theta)$ and an instance of $\sin(2\theta)$. Replacing these with their equivalent
+      expressions (identities B and C above) we can write:
+      \[ \cos(3\theta) =\underline{\hspace{4in}} \]
+    \item Simplifying the previous expression we obtain
+      \[ \cos(3\theta) = \cos^{\framebox(4,6){}}\theta - \framebox(5,8){}\sin^2\theta\cos\theta\]
+    \item Now use identity $A$ above to replace $\sin^2\theta$ with an expression involving $\cos^2\theta$. Doing so, we obtain
+      \[ \cos(3\theta) =\underline{\hspace{4in}} \]
+    \item Simplifying the previous expression we obtain
+      \[ \cos(3\theta) = \framebox(5,8){}\cos^3\theta - \framebox(5,8){}\cos\theta\]
+    \item Now if we set $\theta = 20^\circ$, then $\cos(3\theta) = \cos(60^\circ) = \underline{\hspace{1in}}$. Rewrite the previous
+      equation but substitute $20^\circ$ for $\theta$. Since you know the value of $\cos(60^\circ)$, use that value. Just leave
+      $\cos(20^\circ)$ as it is - don't try to replace that expression with a decimal value. Write
+      the new equation here:
+      \[ \]
+    \item Now let $u = \cos(20^\circ)$ and rewrite the previous equation here:
+      \[ \]
+    \item Now rewrite the previous equation as a polynomal in $u$ set equal to zero:
+      \begin{equation}
+       \framebox(5,8){}u^{\framebox(4,6){}} - 6u - \framebox(5,8){} = 0. 
+        \label{equation: cos20 polynomial}
+      \end{equation}
+  \end{enumerate}
+  Notice that this work implies that $\cos(20^\circ)$ is a root of the polynomial on the left-hand side of Equation \ref{equation: cos20 polynomial}.
+\end{task}
+
+In the inquiry above we showed that $u = \cos(20^\circ)$ must be a solution to the equation
+\[ 8u^3 - 6u - 1 = 0\]
+Notice that this equation can be written
+ \[ (2u)^3 - 3(2u) - 1 =0. \]
+ Therefore, if we take $x = 2u$ we have the polynomial
+ \[ x^3 - 3x - 1 =0. \]
+ We have the following theorem about this polynomial.
 
 \begin{theorem}
-  If $\mathbb{F}(\sqrt{k})$ contains a root of $x^2-3x-1=0$, then so does $\mathbb{F}$.
+  Suppose that $k\in\mathbb{F}$ and that the field $\mathbb{F}(\sqrt{k})$ contains a root of $x^3-3x-1=0$, then so does $\mathbb{F}$.
   \label{theorem: trisecting set up}
 \end{theorem}
+\begin{proof}
+  Suppose that $a+b\sqrt{k}\in\mathbb{F}(\sqrt{k})$ and that $a+b\sqrt{k}$ is a root of the polynomial $x^3-3x-1$. We want to prove that
+  there is some root of the polynomial in $\mathbb{F}$. So if we happened to get lucky and find a root with $b=0$ then we would be done. So let 
+  us suppose that $a+b\sqrt{k}\in\mathbb{F}(\sqrt{k})$ and that $a+b\sqrt{k}$ is a root of the polynomial $x^3-3x-1$ \textit{and} that $b\neq 0$. Now
+  we have some work to do. We are assuming the root we are given is \textit{not} in $\mathbb{F}$ and we have to produce another root which is
+  in $\mathbb{F}$. Well, we claim that in this case $-2a$ is also a root of the polynomial. Notice that since $a\in\mathbb{F}$, it follows that
+  $-2a$ is also in $\mathbb{F}$. So, if we can prove that $-2a$ is also a root (in addition to $a+b\sqrt{k}$) then we will have proved our theorem.
+  To prove this, let's plug in our known root to $x^3-3x-1$. So
+  \[ (a+b\sqrt{k})^3 - 3(a+b\sqrt{k}) -1 = 0.\]
+  Let's simplify! We have
+  \begin{align*}
+  (a+b\sqrt{k})^3 &= a^3 + 3a^2b\sqrt{k} + 3ab^2k + b^3k^{3/2}\\
+  -3(a+b\sqrt{k}) &= -3a-3b\sqrt{k}
+  \end{align*}
+  Thus $(a+b\sqrt{k})^3 - 3(a+b\sqrt{k}) -1 = 0$ becomes 
+  \[ (a^3 + 3a^2b\sqrt{k} + 3ab^2k + b^3k^{3/2}) + (-3a-3b\sqrt{k}) -1 = 0.\]
+  On the left let's group together the terms with $\sqrt{k}$ and $k^{3/2}$:
+  \[ (a^3 + 3ab^2k -3a - 1) + (3a^2b\sqrt{k} + b^3k^{3/2}-3b\sqrt{k}) = 0.\]
+  We can write this as
+  \[ (a^3 + 3ab^2k -3a - 1) + (3a^2b + b^3k -3b)\sqrt{k} = 0.\]
+  For the expression on the left to equal zero we must have
+  \begin{align*}
+    3a^2b + b^3k -3b &= 0\\
+    a^3 + 3ab^2k -3a - 1 &= 0
+  \end{align*}
+    Notice we can factor $b$ out of $3a^2b+b^2k-3b$ so that $b(3a^2 + b^2k -3) = 3$. Since we are assuming that $b\neq 0$ we must have
+    that $3a^2-kb^2-3=0$. Now, notice that the only place $b$ shows up in the second equation is in the term $3ab^2k$. We can use the
+    equation $3a^2-kb^2-3=0$ to write $kb^2 = 3-3a^2$ so that
+    \[ a^3 + 3ab^2k -3a - 1 = 0.\]
+    Becomes
+    \[ a^3 + 3a(3-3a^2) -3a - 1 = 0.\]
+    This simplifies to
+    \[ -8a^3 + 6a - 1 = 0.\]
+    We can rewrite this as
+    \[ (-2a)^3 - 3(-2a) - 1 = 0.\]
+    That is, $-2a$ is a solution to 
+    \[ x^3 - 3x - 1 = 0. \]
+    That's what we wanted to prove! Thus, we have established that whether or not $b=0$, if there is a root of $x^2-3x-1$ in the field
+    $\mathbb{F}(\sqrt{k})$, then there is one in the field $\mathbb{F}$.
+\end{proof}
 
 \begin{theorem}
   It is not possible to trisect and arbitrary angle.
   \label{theorem: can't trisect arbitrary angle}
 \end{theorem}
-
-\subsection{Squaring a Circle}
-
+\begin{proof}
+  If it were possible to trisect a $60^\circ$ angle by compass and straightedge constructions, then that would imply that
+  $\cos(20^\circ)$ is constructible, and therefore that a root of 
+  \[ x^3 - 3x -1 = 0 \]
+  is constructible. Being a constructible number, by Theorem \ref{theorem: constructible iff in sequence of quadratic extensions}
+  such a root would be in some field $\mathbb{F}_N$ where
+  \[ \mathbb{Q}=\mathbb{F}_0 \subseteq \mathbb{F}_1 \subseteq \cdots \subseteq \mathbb{F}_N \]
+  where for $0 \leq j \leq N-1$ each $\mathbb{F}_{j+1}$ is a quadratic extension of $\mathbb{F}_j$. But, by repeated application of
+  Theorem \ref{theorem: trisecting set up}, we must have a root in $\mathbb{Q}$. So, suppose that $\frac{m}{n}$ is a rational number in 
+  lowest terms which is a solution to $x^3 -3x -1 =0$. That is
+  \[ \left( \frac{m}{n} \right)^3 - 3\left( \frac{m}{n} \right) - 1 = 0.\]
+  So of course
+  \[ \frac{m^3}{n^3} - \frac{3m}{n} - 1 = 0.\]
+  Let us multiply both sides of this equation by $n^3$ to obtain
+  \[ m^3 - 3mn^2 - n^3 = 0.\]
+  Now we can use this equation to solve for both $m^3$ and $n^3$:
+  \begin{align*}
+    m^3 &= 3mn^2 -n^3 = n(3mn-n^2)\\
+    n^3 &= m^3 - 3mn^2 = m(m^2-3n^2)
+  \end{align*}
+  Now both $m$ and $n$ have prime factors. But the second equation above tells us that if a prime $p$ divides $m$, then it divides $n^3$. And, if
+  a prime divides $n^3$, then it must divide $n$. So, any prime that divides $m$ must divide $n$. Similarly, the first equation tells us that if
+  a prime $q$ divides $n$, then it divides $m^3$ and therefore $m$. So any prime that divides $n$ must divide $m$. That is, $m$ and $n$ have 
+  exactly the same prime factors!  Since we are assuming that $m/n$ is in lowest terms, that means that $m$ and $n$ be $\pm 1$. But, neither 
+  $1$ nor $-1$ is a solution to $x^3 - 3x -1 =0$. So, we have a contradiction, and we conclude there is no rational root to this equation. Therefore
+  there is no constructible root to this equation. Thus, $2\cos(20^\circ)$, which is a root of this equation, is not constructible. So
+  $\cos(20^\circ)$ is not constructible.
+\end{proof}
 
 \end{document}
 
