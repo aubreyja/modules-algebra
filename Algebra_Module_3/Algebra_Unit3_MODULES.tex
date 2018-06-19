@@ -244,7 +244,15 @@ In this section we introduce the notion of a field. The emphasis is on justifyin
 fields. We then introduce ordered fields and relate these to issues often studied in high school mathematics.
 
 %%%%%%%%%%%%%%
-{\it Acknowledgements.} TODO
+{\it Acknowledgements.}  The material in this part is inspired by the notes from courses we've taught. The textbooks used in those courses include
+
+Hadlock, C. R. (1978). Field Theory and Its Classical Problems. Washington: Mathematical Association of America.
+
+Madden, D. J. \& Aubrey, J. A. (2017). An introduction to proof through real analysis (1st ed.). Hoboken, NJ: Wiley.
+
+Peressini, A. L. (2003). Mathematics for high school teachers: An advanced perspective. Prentice Hall.
+
+
 
 %%%%%%%%%%%%%%
 \newpage
@@ -865,21 +873,14 @@ Above we gave the axioms that define a field. We add to those the following \emp
 \newpage \subsection{Homework}  
 
 \begin{enumerate}
-
-  \item Prove that if $x$ is positive, then so is $x^{-1}$, and that if $x$ is negative then $x^{-1}$ is negative. Then use this fact to prove the next corollary.
-
-  \item If $x$ and $y$ are positive, then $xy^{-1}$ and $yx^{-1}$ are positive.
-
-  \item Prove that the product of two negative elements of a field is a positive element.
-
 %%%%%% Strayer added this question %%%%
 \item   Recall that we have defined \emph{fields} to be mathematical structures with operations of addition ($+$) and multiplication ($\cdot$) that satisfy the following properties:
   \begin{itemize}
-    \item[A)] $a+b=b+a$ and $a\cdot b=b\cdot a$ (commutative laws)
-    \item[B)] $(a+b)+c = a + (b+c)$ and $(a\cdot b)\cdot c = a\cdot (b \cdot c)$ (associative laws)
-    \item[C)] $a\cdot (b+c) = a\cdot b + a \cdot c$ (distributive law)
-    \item[D)] There are distinct elements, called $0$ and $1$, such that $a+0 = a $ and $a \cdot 1 = a$ for all $a$.
-    \item[E)] For each $a$ there is an element $b$ such that $a + b = 0$ and if $a\neq 0$, there is an element $c$ such that $a\cdot c = 1$.
+    \item[(A)] $a+b=b+a$ and $a\cdot b=b\cdot a$ (commutative laws)
+    \item[(B)] $(a+b)+c = a + (b+c)$ and $(a\cdot b)\cdot c = a\cdot (b \cdot c)$ (associative laws)
+    \item[(C)] $a\cdot (b+c) = a\cdot b + a \cdot c$ (distributive law)
+    \item[(D)] There are distinct elements, called $0$ and $1$, such that $a+0 = a $ and $a \cdot 1 = a$ for all $a$.
+    \item[(E)] For each $a$ there is an element $b$ such that $a + b = 0$ and if $a\neq 0$, there is an element $c$ such that $a\cdot c = 1$.
   \end{itemize}
   In light of these properties, consider the following equation       
       \[8x+3=2x+21.\]
@@ -888,6 +889,60 @@ Above we gave the axioms that define a field. We add to those the following \emp
     \item[ii.]How many of the above properties are \emph{necessary} in order to solve the equation (i.e. did you need to use them all)? If not, which properties were not necessary?
     \item[iii.] Are these properties \emph{sufficient} for solving this equation (i.e., did you need to apply other properties that are not listed in A - E in order to solve the equation)? If so, what other properties were required? 
   \end{itemize}
+
+\item Suppose that $\mathbb{F}$ is a field, and that $k\in\mathbb{k}$. Let
+  \[ \mathbb{F}(\sqrt{k}) = \{ a+b\sqrt{k} \mid a,b\in\mathbb{F} \}.\]
+  We define addition and multiplication on $\mathbb{F}(\sqrt{k})$ as follows:
+  \begin{align*}
+    (a+b\sqrt{k}) + (c+d\sqrt{k}) = (a+c) &+ (b+d)\sqrt{k}\\
+    (a+b\sqrt{k})\cdot (c+d\sqrt{k}) = (ac+bdk) + (ad+bc)\sqrt{k}
+  \end{align*}
+  Here we show that $\mathbb{F}(\sqrt{k})$ is a field.
+  \begin{enumerate}
+    \item Show that addition and multiplication are commutative on $\mathbb{F}(\sqrt{k})$.
+    \item Show that addition and multiplication are associative on $\mathbb{F}(\sqrt{k})$.
+    \item Show that the distributive property holds in $\mathbb{F}(\sqrt{k})$.
+    \item What is the additive identity in $\mathbb{F}(\sqrt{k})$? What is the multiplicative identity in $\mathbb{F}(\sqrt{k})$?
+    \item If $a+b\sqrt{k}\in\mathbb{F}(\sqrt{k})$, what is its additive inverse?
+    \item If $a+b\sqrt{k}\in\mathbb{F}(\sqrt{k})$, and $a,b$ are not both zero, then what is the multiplicative inverse of $a+b\sqrt{k}$? 
+      (Hint: For this one, begin by solving the equation $(a+b\sqrt{k})x=1$ for $x$. Of course, the solution to that equation is
+      $x = \frac{1}{a+b\sqrt{k}}$. The problem is that written this way, we don't know $x$ is in $\mathbb{F}(\sqrt{k})$. Try to rewrite
+      $x$ so that it is clearly in $\mathbb{F}(\sqrt{k})$.)
+  \end{enumerate} \label{homework: quadratic extensions are fields}
+
+  \item Let $\mathbb{F}$ be an ordered field and $a,b\in\mathbb{F}$. Prove the following.
+    \begin{enumerate}
+      \item $(a^{-1})^{-1} = a$.
+      \item $(ab)^{-1} = b^{-1}a^{-1}$
+      \item $(-a)^{-1} = -(a^{-1})$
+    \end{enumerate}
+
+  \item Prove that in an ordered field $\mathbb{F}$ if $a$ is positive, then so is $a^{-1}$, and that if $a$ is negative then $a^{-1}$ is negative. 
+
+  \item Prove that in an ordered field $\mathbb{F}$, if $a$ and $b$ are positive, then $ab^{-1}$ and $ba^{-1}$ are positive.
+
+  \item Prove that in an ordered field the product of two negative elements of a field is a positive element.
+
+
+\item Carefully use the field axioms to prove the ``Average Theorem.''
+  \begin{quotation}
+    Suppose that $\mathbb{F}$ is an ordered field and that $a,b\in\mathbb{F}$ with $a<b$. Then there is some $r\in\mathbb{F}$ with
+    $a < r < b$. In fact $r = \frac{a+b}{2}$ is one such element of $\mathbb{F}$.
+  \end{quotation}
+
+\item Suppose that $\mathbb{F}$ is an ordered field. Then for $x\in\mathbb{F}$ we can define
+  \[ |x| = \begin{cases}
+      x &\text{if }x\geq 0\\
+      -x &\text{if }x < 0
+  \end{cases}.\]
+  Prove the following 
+  \begin{enumerate}
+    \item If $a\in\mathbb{F}$, then $|a| \geq 0$.
+    \item If $a\in\mathbb{F}$, then $-|a|\leq a \leq |a|$.
+    \item Let $a,r\in\mathbb{F}$ with $r\geq 0$. Then for all $x\in\mathbb{F}$, $|x-a|\leq r$ if and only if $a-r\leq x \leq a+r$.
+    \item For all $a,b\in\mathbb{F}$, $|ab| = |a||b|$.
+    \item For all $a,b\in\mathbb{F}$, $|a+b|\leq |a|+|b|$. This is called the ``Triangle Inequality.''
+  \end{enumerate}
 \end{enumerate}
 
 \newpage \subsection{In-Class Resources}
@@ -1186,7 +1241,13 @@ Archimedean fields, complete fields, and explore examples of these. We discuss t
 numbers as the unique complete ordered field.
 
 %%%%%%%%%%%%%%
-{\it Acknowledgements.} TODO
+{\it Acknowledgements.}  The material in this part is inspired by the notes from courses we've taught. The textbooks used in those courses include
+
+Hadlock, C. R. (1978). Field Theory and Its Classical Problems. Washington: Mathematical Association of America.
+
+Madden, D. J. \& Aubrey, J. A. (2017). An introduction to proof through real analysis (1st ed.). Hoboken, NJ: Wiley.
+
+Peressini, A. L. (2003). Mathematics for high school teachers: An advanced perspective. Prentice Hall.
 
 %%%%%%%%%%%%%%
 \newpage
@@ -1564,13 +1625,15 @@ We have seen this definition before.
   element $k\in\mathbb{F}$ such that $x < k$.
 \end{definition}
 
+The following theorem says that in an Archimedean field, the ceiling and floor functions are well defined.
+
 \begin{theorem}
   For each positive element $x$ in an Archimedean field $\mathbb{F}$ there is a unique integral element $n$ such that
   \[ n \leq x < n + 1.\]
   \label{theorem: archimedean implies unique integral element}
 \end{theorem}
 \begin{proof}
- TODO 
+  We leave the proof as an exercise.
 \end{proof}
 
 \subsubsection{Inquiry: Completeness}
@@ -1686,8 +1749,52 @@ essentially only one complete ordered field, and it is the field of real numbers
 
 \begin{enumerate}
 
-  \item Homework problems.
+\item For each of the following sets, find their minimums and maximums and greatest lower bounds and least upper bounds, if they exist.
+  \begin{enumerate}
+    \item $\mathbb{N}$
+    \item $[0,1)$
+    \item The set of irrational numbers in $[0,1]$.
+  \end{enumerate}
+\item Show that $0$ is the greatest lower bound of $S = \{ x \in \mathbb{R} \mid x^{-1}\in \mathbb{N}\}$.
 
+\item Let $A$ be a set of real numbers.
+
+\begin{enumerate}
+\item Prove that if $A$ has an upper bound, then $A$ has an upper bound that
+is a natural number.
+
+\item Prove that if $A$ has a lower bound, then $A$ has a lower bound that is
+an integer.
+
+\item Prove that if $A$ has a lower bound and an upper bound, then there is a
+natural number $n$ so that $n$ is an upper bound and $-n$ is a lower bound of
+$A$.
+
+\item Prove that $A$ is bounded (above and below) if and only if there is
+$n\in \mathbb{N}$ so that for all $x\in A$, $-n\leq x\leq n$.
+
+\item Prove that $A$ is bounded (above and below) if and only if there is
+$n\in \mathbb{N}$ so that for all $x\in A$, $-n<x<n$.
+\end{enumerate}
+
+\item Prove that if $a\in\mathbb{R}$, then there exists $n\in \mathbb{N}$ so that $a<10^{n}$.
+
+\item Let $a\in\mathbb{R}$.
+\begin{enumerate}
+\item Prove that for all $n\in\mathbb{N}$, there is $m\in \mathbb{Z}$ so that $10^{n}m\leq a\leq$ $10^{n}(m+1)$.
+\item What does part a say about approximating real numbers with decimals?
+\end{enumerate}
+
+\item Let $S=\{r\in \mathbb{Q} \mid\text{there is an } n\in \mathbb{N} \text{ such that }r=\frac{10^{n}-1}{10^{n}}\}$.
+\begin{enumerate}
+\item Prove that $S$ has at least one element.
+\item Prove that $S$ has at least one upper bound.
+\item Prove that $S$ has a real number that is its least upper bound.
+\item What does this tell you about $u=0.99999\dots$?
+\item Can you guess what the real number $u$ is?
+\end{enumerate}
+
+\item Is $\mathbb{Q}(\sqrt{2})$ Archimedean? Is it complete?
 
 \end{enumerate}
 
@@ -2074,16 +2181,21 @@ considered by ancient Greek mathematicians.
 
 
 %%%%%%%%%%%%%%
-{\it Acknowledgements.} TODO
+{\it Acknowledgements.}  The material in this part is inspired by the notes from courses we've taught. The textbooks used in those courses include
+
+Hadlock, C. R. (1978). Field Theory and Its Classical Problems. Washington: Mathematical Association of America.
+
+Madden, D. J. \& Aubrey, J. A. (2017). An introduction to proof through real analysis (1st ed.). Hoboken, NJ: Wiley.
+
+Peressini, A. L. (2003). Mathematics for high school teachers: An advanced perspective. Prentice Hall.
 
 %%%%%%%%%%%%%%
 \newpage
 \begin{bignote}[Materials]
-  In this part there are 11 inquiries to print and give to students. They are
+  In this part there are 10 inquiries to print and give to students. They are
 \begin{itemize}
   \item Inquiry: Bisect a line segment
   \item Inquiry: Construct Angles of $30^\circ$ and $60^\circ$
-  \item Inquiry: Construct a line parallel to a given line
   \item Inquiry: Construct a line perpendicular to a given line
   \item Inquiry: Using Similar Triangles
   \item Inquiry: Remember the Equilateral Triangle
@@ -2201,22 +2313,6 @@ Follow these steps to construct angles of $30^\circ$ and $60^\circ$ using only t
 
 The angle between the two line segments is $60^\circ$ because the triangle formed by the two endpoints of the original line segment and the
 intersection point of the arcs is an equilateral triangle. You can now construct a $30^\circ$ angle by bisecting the $60^\circ$ angle.
-\end{task}
-
-\subsection{Inquiry: Construct a line parallel to a given line}
-\begin{task}
-  Using the fundamental constructions, we can draw a line parallel to a given line through any point not on the given line.
-
-  \begin{enumerate}
-    \item Begin with a line $\ell$ and a point $P$ not on the line.
-    \item Mark an arbitrary point $A$ on the given line.
-    \item Draw a line through the new point $A$ and the original given point $P$.
-    \item Place the point of the compass at point $A$ and draw an arc from line $\ell$ which intersects the new line, say at point $B$.
-    \item Without changing the width of the compass, place the point of the compass at point $P$ and draw a (rough) copy of the first arc but centered at $P$. Be sure it intersects the new line. Let's call that point $C$.
-    \item Open the compass to the distance from point $P$ to point $A$.
-    \item Place the point of the compass at point $A$ and draw an arc which intersects 
-    \item TODO: FIx this!
-  \end{enumerate}
 \end{task}
 
 \subsection{Inquiry: Construct a line perpendicular to a given line}
@@ -2398,7 +2494,7 @@ the following result.
   \label{theorem: quadratic extensions of fields are fields}
 \end{theorem}
 \begin{proof}
-  This was proved as homework problem XXXX.
+  This was proved as homework problem \ref{homework: quadratic extensions are fields} above.
 \end{proof}
 
 First we give a sufficient condition for a number to be constructible.
@@ -2607,8 +2703,8 @@ In the previous inquiry you've proved:
   But now we repeatedly apply Theorem \ref{theorem: cube root of 2}: Since $\sqrt[3]{2}\in\mathbb{F}_N$ and $\mathbb{F}_N = \mathbb{F}_{N-1}(\sqrt{k})$
   for some $k\in\mathbb{F}_{N-1}$, it follows by Theorem \ref{theorem: cube root of 2} that $\sqrt[3]{2} \in\mathbb{F}_{N-1}$. But
   $\mathbb{F}_{N-1} = \mathbb{F}_{N-1}(\sqrt{k})$ for some $k\in\mathbb{F}_{N-2}$. So again Theorem \ref{theorem: cube root of 2} implies that
-  $\sqrt[3]{2}\in\mathbb{F}_{N-2}$. And so on until we arrive at the conclusion that $\sqrt[3]{2}\in\mathbb{Q}$. But $\sqrt[3]{2}\not\in\mathbb{Q}$, by
-  Homework XXX.
+  $\sqrt[3]{2}\in\mathbb{F}_{N-2}$. And so on until we arrive at the conclusion that $\sqrt[3]{2}\in\mathbb{Q}$. But $\sqrt[3]{2}\not\in\mathbb{Q}$ - it
+  is an irrational number.
 \end{proof}
 \
 \subsection{Trisecting an Angle}
@@ -2763,6 +2859,50 @@ Notice that this equation can be written
   $\cos(20^\circ)$ is not constructible.
 \end{proof}
 
+\newpage\subsection{Homework}
+
+\begin{enumerate}
+  \item Construct a line parallel to a given line using compass and straightedge constructions.
+
+  \item Consider the number $r = \sqrt[4]{13}+\frac{4}{3}\sqrt{\sqrt{6}+\sqrt{1+2\sqrt{7}}}$. Give an explicit sequence of fields
+  $\mathbb{F}_0 = \mathbb{Q} \subset \mathbb{F}_1 \subset \mathbb{F}_2 \subset \dots \subset \mathbb{F}_N$ such that $r \in \mathbb{F}_N$
+  and for $1 \leq j \leq N-1$ each $\mathbb{F}_{j+1}$ is a quadratic extension of its predecessor $\mathbb{F}_j$.
+  %\begin{solution}
+  %  The number $r \in \mathbb{F}_6$ where
+  %  \begin{align*}
+  %    \mathbb{F}_0 &=\mathbb{Q}\\
+  %    \mathbb{F}_1 &=\mathbb{F}_0(\sqrt{7})\\
+  %    \mathbb{F}_2 &=\mathbb{F}_1(\sqrt{1+2\sqrt{7}})\\
+  %    \mathbb{F}_3 &=\mathbb{F}_2(\sqrt{6})\\
+  %    \mathbb{F}_4 &=\mathbb{F}_3(\sqrt{\sqrt{6}+\sqrt{1+2\sqrt{7}}})\\
+  %    \mathbb{F}_5 &=\mathbb{F}_4(\sqrt{13})\\
+  %    \mathbb{F}_6 &=\mathbb{F}_5(\sqrt[4]{13})
+  %  \end{align*}
+  %\end{solution}
+
+  \item Can the cube be ``tripled''?
+  %\begin{solution}
+  %  Nope, same argument as for doubled, but with $\sqrt[3]{3}$.
+  %\end{solution}
+
+  \item It is clearly possible to divide an arbitrary angle into four equal parts by repeated bisection.  Show how this may
+  also be deduced algebraically from the equation relating $\cos(4\theta)$ and $\cos \theta$.
+  %\begin{solution}
+  %  Assume that an angle $4\theta$ is constructible. By an argument similar to what we have seen in class (i.e. by \emph{geometry},
+  %  this implies that $\cos(4\theta)$ is constructible.  We also know that dividing the angle into four equal parts would be 
+  %  equivalent to constructing $\cos(\theta)$. So, we argue that $\cos(\theta)$ is constructible: First, using trig identities you can show that 
+  %  \[ \cos(4\theta) = 8\cos^4(\theta)-8\cos^2(\theta)+1 \]
+  %  If we let $x = \cos^2(\theta)$ we obtain the equation,
+  %  \[ 8x^2 - 8x + (1-\cos(4\theta) = 0\]
+  %  The quadratic equation gives
+  %  \[ x = \frac{8 \pm \sqrt{64 - 32(1-\cos(4\theta))}}{16} \]
+  %  Notice that since $-1 \leq \cos(4\theta) \leq 1$, the discrimiant is at least zero, so the possible values for $x$ are always real 
+  %  numbers.  Even more, the values of $x$ can clearly be seen to be in $\mathbb{Q}$ or a quadratic extension of $\mathbb{Q}$. Thus
+  %  those possible values for $x$ are constructible.  That gives us that $\cos^2(\theta)$ is constructible, and that implies
+  %  $\cos(\theta)$ is constructible.
+  %\end{solution}
+  \end{enumerate}
+
 \newpage\subsection{In-Class Resources}
 
 \subsubsection{Inquiry: Bisect a line segment}
@@ -2793,22 +2933,6 @@ Follow these steps to construct angles of $30^\circ$ and $60^\circ$ using only t
 
 The angle between the two line segments is $60^\circ$ because the triangle formed by the two endpoints of the original line segment and the
 intersection point of the arcs is an equilateral triangle. You can now construct a $30^\circ$ angle by bisecting the $60^\circ$ angle.
-\end{task}\newpage
-
-\subsubsection{Inquiry: Construct a line parallel to a given line}
-\begin{task}
-  Using the fundamental constructions, we can draw a line parallel to a given line through any point not on the given line.
-
-  \begin{enumerate}
-    \item Begin with a line $\ell$ and a point $P$ not on the line.
-    \item Mark an arbitrary point $A$ on the given line.
-    \item Draw a line through the new point $A$ and the original given point $P$.
-    \item Place the point of the compass at point $A$ and draw an arc from line $\ell$ which intersects the new line, say at point $B$.
-    \item Without changing the width of the compass, place the point of the compass at point $P$ and draw a (rough) copy of the first arc but centered at $P$. Be sure it intersects the new line. Let's call that point $C$.
-    \item Open the compass to the distance from point $P$ to point $A$.
-    \item Place the point of the compass at point $A$ and draw an arc which intersects 
-    \item FIx this!
-  \end{enumerate}
 \end{task}\newpage
 
 \subsubsection{Inquiry: Construct a line perpendicular to a given line}
