@@ -177,7 +177,7 @@ The Mathematics Of Doing, Understand, Learning, and Educating Secondary Schools 
 \newpage
 %%%%%% TABLE OF CONTENTS %%%%%%%%%%%%%%% 	
 \thispagestyle{plain} \pagenumbering{roman}  
-\listoftodos
+%\listoftodos
 \tableofcontents
 \newpage \pagenumbering{arabic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -890,7 +890,7 @@ Above we gave the axioms that define a field. We add to those the following \emp
     \item[iii.] Are these properties \emph{sufficient} for solving this equation (i.e., did you need to apply other properties that are not listed in A - E in order to solve the equation)? If so, what other properties were required? 
   \end{itemize}
 
-\item Suppose that $\mathbb{F}$ is a field, and that $k\in\mathbb{k}$. Let
+\item Suppose that $\mathbb{F}$ is a field, and that $k\in\mathbb{F}$. Let
   \[ \mathbb{F}(\sqrt{k}) = \{ a+b\sqrt{k} \mid a,b\in\mathbb{F} \}.\]
   We define addition and multiplication on $\mathbb{F}(\sqrt{k})$ as follows:
   \begin{align*}
@@ -986,9 +986,10 @@ Now, analyze this situation even more carefully by answering the following:
 %%% defines fields and has them explore. I added a homework assignment to have them think about solving equations using Usiskin's definition of field.
 \end{enumerate}
 \end{task}
+\newpage
 
 \subsubsection{Inquiry: Finite Fields}
-
+\begin{task}
   We are interested in mathematical structures with operations of addition ($+$) and multiplication ($\cdot$) that satisfy the following properties:
   \begin{itemize}
     \item[(A)] $a+b=b+a$ and $a\cdot b=b\cdot a$ (commutative laws)
@@ -1122,6 +1123,7 @@ Now, analyze this situation even more carefully by answering the following:
 
         \newpage
     \end{enumerate}
+  \end{task}
 
     \newpage \subsubsection{Inquiry: $\mathbb{Q}(\sqrt{2})$}
 
@@ -1748,6 +1750,9 @@ essentially only one complete ordered field, and it is the field of real numbers
   \label{theorem: reals are unique}
 \end{theorem}
 
+Again, the purpose of stating this theorem is to highlight the uniqueness of the real numbers. Essentially, the real numbers contain every number
+we might need for measurement. The proof of this theorem is beyond the scope of these notes.
+
 %%%%%%%%% 1 HOMEWORK %%%%%%%%%%%%%%%%%%%%
 \newpage \subsection{Homework}  
 
@@ -1805,7 +1810,7 @@ $n\in \mathbb{N}$ so that for all $x\in A$, $-n<x<n$.
 \section{In-Class Resources}
 
 \newpage 
-\subsection{Opening Inquiry: $\mathbb{Q}(x)$}
+\subsection*{Opening Inquiry: $\mathbb{Q}(x)$}
 
 \begin{task}
 In $\mathbb{Q}$ and $\mathbb{R}$ we know that we have the integers as a subset. And, each positive integer can be built up by repeatedly adding 1 to itself.
@@ -2353,7 +2358,7 @@ Before stating and proving an important lemma, we have an inquiry which asks you
 \begin{task}
   Consider the following image:
   \begin{center}
-    \includegraphics[scale=.1]{Images/a_over_b.png}
+    \includegraphics[scale=1]{Images/a_over_b.png}
   \end{center}
   Here one long side of the triangle has length $a$, and a portion of that side is marked as having length $x$. Another side of the
   triangle has length $b$, and a portion of that side is marked as having length $1$. Use similar triangles to prove that in this situation $x = \frac{a}{b}$.
@@ -2396,7 +2401,7 @@ Before stating and proving an important lemma, we have an inquiry which asks you
   This shows that a segment of length of $ab$ can be constructed if we are given segments of length $a$, $b$, and $1$. As for $a/b$, the diagram
   in the inquiry above shows that a segment of length $a/b$ can be constructed.
   \begin{center}
-    \includegraphics[scale=.1]{Images/a_over_b.png}
+    \includegraphics[scale=1]{Images/a_over_b.png}
   \end{center}
   To complete the proof for this case, you must tie up two loose ends. First, explain how to construct this diagram using the fundamental
   constructions. Second, the diagram assumes that $b>1$. We need a diagram which handles the case $b \leq 1$. The tying of these loose ends
@@ -2980,7 +2985,7 @@ intersection point of the arcs is an equilateral triangle. You can now construct
 \begin{task}
   Consider the following image:
   \begin{center}
-    \includegraphics[scale=.1]{Images/a_over_b.png}
+    \includegraphics[scale=1]{Images/a_over_b.png}
   \end{center}
   Here one long side of the triangle has length $a$, and a portion of that side is marked as having length $x$. Another side of the
   triangle has length $b$, and a portion of that side is marked as having length $1$. Use similar triangles to prove that in this situation $x = \frac{a}{b}$.
