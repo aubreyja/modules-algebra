@@ -1,0 +1,249 @@
+\documentclass[answers]{exam}
+\usepackage{fullpage}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsfonts,amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+
+
+\begin{document}
+\title{Potential Exam Problems for Module 3}
+
+\date{}
+\author{}
+
+\maketitle
+
+
+\begin{questions}
+  \question  Let $n$ be a positive integer that is not a perfect square.  Let $\mathbb{Q}(\sqrt{n})$ be the set of all
+  real numbers $x$ that can be expressed in the form $x = r + s\sqrt{n}$, where $r$ and $s$ are rational numbers.
+  \begin{parts}
+    \part Explain why 0 and 1 are in $\mathbb{Q}(\sqrt{n})$.
+    \begin{solution}
+      Since $0 = 0 + 0\sqrt{n}$ and $1 = 1 + 0\sqrt{n}$.
+    \end{solution}
+    \part Prove that $+$ and $\cdot$ are closed in $\mathbb{Q}(\sqrt{n})$.
+    \begin{solution}
+      Suppose we have $a+b\sqrt{n}$,$c+d\sqrt{n}$ both in $\mathbb{Q}(\sqrt{n})$.  Then
+      \[ (a+b\sqrt{n})+(c+d\sqrt{n}) = (a+b)+(c+d)\sqrt{n} \]
+      and
+      \begin{align*}
+        (a+b\sqrt{n})(c+d\sqrt{n}) &= ac +ad\sqrt{n} + bc\sqrt{n} + bdn\\
+        &= (ac+bdn)+(ad+bc)\sqrt{n}
+      \end{align*}
+      And since $a$, $b$, $c$, $d$ and $n$ are rationals, so are $a+b$, $c+d$, $ac+bdn$ and $ad+bc$.
+    \end{solution}
+    \part Prove that $\langle \mathbb{Q}(\sqrt{n}),+,\cdot\rangle$ is a subfield of the field $\langle \mathbb{R},+,\cdot\rangle$
+    of real numbers and that $\mathbb{Q}(\sqrt{n})$ contains the field $\langle \mathbb{Q},+,\cdot\rangle$ of rationals as
+    a subfield.
+    \begin{solution}
+      First, $\mathbb{Q}\subset \mathbb{Q}(\sqrt{n}) \subset \mathbb{R}$.  Second, the operations of addition and multiplication 
+      on $\mathbb{R}$ restricted to $\mathbb{Q}(\sqrt{n})$ give the field $\langle \mathbb{Q}(\sqrt{n}), +, \cdot \rangle$. Similarly,
+      those operations further restricted to $\mathbb{Q}$ give the field $\langle \mathbb{Q}, +, \cdot \rangle$.
+    \end{solution}
+    \part Prove that $\sqrt{3}$ is not in $\mathbb{Q}(\sqrt{2})$.
+    \begin{solution}
+      If $\sqrt{3} = a + b\sqrt{2}$ where $a$ and $b$ are rationals, then
+      \[ 3 = a^2 + 2ab\sqrt{2} + 2b^2. \]
+      Then
+      \[ \sqrt{2} = \frac{3-a^2-2b^2}{2ab}. \]
+      However, this cannot happen since $\sqrt{2}$ is irrational.
+    \end{solution}
+  \end{parts}
+
+  \question Suppose that $\langle \mathbb{F},+,\cdot,\rangle$ is a field with additive identity $0$ and multiplicative
+  identify $1$.  Prove that for any $x \in \mathbb{F}$, $(-1)x = -x$.
+  \begin{solution}
+    By the distributive axiom,
+      \[ x + (-1)x = x(1 + (-1)) \]
+      By the definition of $-1$, $1+(-1) = 0$.  Since $0x = 0$ we have
+      \begin{align*}
+       x + (-1)x &= x(1 + (-1)) \\
+       &= x(0) = 0
+     \end{align*}
+     Since $x + (-1)x = 0$ it follows that $(-1)x$ is the additive inverse of $x$. That is, $(-1)x=-x$.
+  \end{solution}
+  
+  \question Suppose that $\langle \mathbb{F},+,\cdot,<\rangle$ is an ordered field with additive identity $0$ and multiplicative
+  identify $1$.  Using only the field axioms and the ordering axioms, prove that
+  \begin{parts}
+    \part if $x$ and $y$ are in $\mathbb{F}$ and are positive, then $x+y$ and $xy$ are positive.
+    \begin{solution}
+      Suppose $0 < x$ and $0 < y$.  By the ordering axioms: $0+y < x+y$, and $0 < y$ together with $y < x+y$ implies $0 < x+y$.
+      Similarly, $y(0) < yx$; that is $0 < xy$.
+    \end{solution}
+    \part if $x \neq 0$ is an element of $\mathbb{F}$ then $x^2$ is positive.
+    \begin{solution}
+      If $0 < x$ then $0x < x(x)$. That is, $0 < x^2$.  If $x < 0$ then $0 < -x$. So $0(-x) < (-x)(-x)$. But by above,
+      $-x=(-1)x$. So, $(-x)(-x) = (-1)x(-1)x = (-1)^2x^2$.  Since $(-1)^2 + -1 = (-1)(-1+1) = (-1)(0)=0$, it follows that
+      $(-1)^2$ is the additive inverse of $-1$; that is $(-1)^2 = 1$.  So $(-x)(-x)=x^2$.  Thus, $0<x^2$.
+    \end{solution}
+  \end{parts}
+
+  \question Prove that in an ordered field if $x$ is positive then $\frac{1}{x}$ is positive.
+  \begin{solution}
+    (This proof uses that a negative times a positive is negative.  So just to be sure I'll prove that first. So 
+    suppose $z$ is positive and $w$ is negative.  Then $-w$ is positive, so $z(-w)$ is positive.  Then
+    \[ zw + z(-w) = z(w+(-w)) = z(0) = 0. \]
+    So $zw$ is the additive inverse of $z(-w)$.  Since $z(-w)$ is positive, $zw$ must be negative. )
+    So, suppose $x >0$ but $\frac{1}{x} < 0$.  Then $x\left(\frac{1}{x}\right) = 1 < 0$.
+  \end{solution}
+
+  \question Prove that if $\langle \mathbb{F},+,\cdot\rangle$ is a finite field, then it is not possible to define an order relation
+  on $\mathbb{F}$ that satisfies all of the ordering axioms.
+  \begin{solution}
+   If $\langle \mathbb{F},+,\cdot\rangle$ is a finite field with an ordering $<$ then there must be a largest element $f$. But
+   then consider $f+1$. It must either be equal to $f$ in which case $1 =0$ or it must be smaller than $f$ which contradicts one
+   of the ordering axioms (the one about order being preserved when adding).
+  \end{solution}
+
+  \question Prove that in an ordered field the product of two negatives is positive.
+  \begin{solution}
+    Suppose $x$ and $y$ are negative.  Then $(-x)(-y)$ is positive.  Also,
+    \begin{align*}
+      (-x)(-y) &= (-1)x(-1)y \\
+      &= (-1)^2xy\\
+      &= xy
+    \end{align*}
+    (See above for a proof that $(-1)^2 = 1$.)
+  \end{solution}
+
+
+\question Suppose that $\langle \mathbb{F}, +, \cdot, < \rangle$ is an 
+ordered field.  Using only the field axioms and ordering axioms, prove that 
+if $a$ and $b$ are negative elements of $\mathbb{F}$ then $\frac{a}{b}$ 
+is positive.
+\begin{solution}
+  First, we claim that if $b$ is negative then $\frac{1}{b}$ is negative. If $b$ is
+  negative and $\frac{1}{b}$ is positive then
+  \begin{align*}
+    b &< 0 \\
+    \frac{1}{b}b &< \left(\frac{1}{b}\right)0\\
+    1 &< 0
+  \end{align*}
+  Contradiction. So, if $b$ is negative, then $\frac{1}{b}$ is negative. Suppose $a$ is 
+  negative.  Then $-a$ is positive. So, if $a$ and $b$ are negative, then
+  $-a\frac{1}{b}$ is a positive times a negative so is negative.  (This last statement follows directly from 
+  the axiom that if $x < y$ and $0 < z$ then $zx < zy$.) Finally,
+  And
+  \[
+    \frac{a}{b} + (-a)\left(\frac{1}{b}\right) =  \frac{1}{b}(a+-a) = 0
+ \]
+  So $(-a)\frac{1}{b}$ is the additive inverse of $\frac{a}{b}$. Since $(-a)\frac{1}{b}$
+  is negative, $\frac{a}{b}$ must be positive.
+\end{solution}
+
+\question If an integer $n$ is not a perfect square, explain why the ordered field $\langle \mathbb{Q}(\sqrt{n}),+,\cdot,<\rangle$
+is Archimedean but not complete.
+\begin{solution}
+    That the field is Archimedian can be seen as follows:  Let $r = a + b\sqrt{n} \in \mathbb{Q}(\sqrt{n})$.  The number $r$ is also
+    in $\mathbb{R}$. Since $\mathbb{R}$ is Archimedean we can find an integer $m\in \mathbb{R}$ such that $m \leq r < m+1$. But since
+    $m \in \mathbb{Q}(\sqrt{n})$ also, the statement $m \leq r < m+1$ holds there as well.
+    We now show that $\mathbb{Q}(\sqrt{n})$ is not complete. First, let $m$ be an integer other than $n$ and consider the set
+    \[ S = \{ x + \sqrt{n} | x^2 < m\} \]
+    The least upper bound of this set is $\sqrt{m} + \sqrt{n}$ which is not in $\mathbb{Q}(\sqrt{n})$.
+\end{solution}
+
+\question 
+\begin{parts}
+  \part Define what it means for an ordered field to be complete.
+  \begin{solution}
+    An ordered field $\mathbb{F}$ is complete if every nonempty subset $S\subseteq \mathbb{F}$
+    which is bounded above has a least upper bound.
+  \end{solution}
+  \part Define what it means for an ordered field to be Archimedean.
+  \begin{solution}
+    An ordered field $\mathbb{F}$ is Archimedean if for every $x \in \mathbb{F}$,
+    there is an integral element $n \in \mathbb{F}$ such that $x < n$.
+  \end{solution}
+  \part Given an example of an Archimedean field which is not complete. (Just state the example, you do not need to prove it
+  satisifies the requirements.)
+  \begin{solution}
+    The rationals, $\mathbb{Q}$.
+  \end{solution}
+  \part Prove that every complete field is Archimedean.
+\begin{solution}
+  Suppose that $\mathbb{F}$ is a complete field.  Suppose that $\mathbb{F}$
+  is not Archimedean.  Then there exists an $x \in \mathbb{F}$ such that
+  for all integral elements $n \in \mathbb{F}$, $n^* \leq x$. This means
+  that the set $N$ of interal elements of $\mathbb{F}$ is bounded above.
+  By completeness of $\mathbb{F}$, $N$ must have a least upper bound, say $b$.
+  Then $b-1$ is not an upper bound so there exists $m \in N$ such that
+  $b-1 < m$.  Then $b < m + 1$. However, $m+1$ is an integral element
+  of $\mathbb{F}$, contradicting the definition of $b$.
+\end{solution}
+\end{parts}
+
+  \question Consider the number $r = \sqrt[4]{13}+\frac{4}{3}\sqrt{\sqrt{6}+\sqrt{1+2\sqrt{7}}}$. Give an explicit sequence of fields
+  $\mathbb{F}_0 = \mathbb{Q} \subset \mathbb{F}_1 \subset \mathbb{F}_2 \subset \dots \subset \mathbb{F}_N$ such that $r \in \mathbb{F}_N$
+  and for $1 \leq j \leq N-1$ each $\mathbb{F}_{j+1}$ is a quadratic extension of its predecessor $\mathbb{F}_j$.
+  \begin{solution}
+    The number $r \in \mathbb{F}_6$ where
+    \begin{align*}
+      \mathbb{F}_0 &=\mathbb{Q}\\
+      \mathbb{F}_1 &=\mathbb{F}_0(\sqrt{7})\\
+      \mathbb{F}_2 &=\mathbb{F}_1(\sqrt{1+2\sqrt{7}})\\
+      \mathbb{F}_3 &=\mathbb{F}_2(\sqrt{6})\\
+      \mathbb{F}_4 &=\mathbb{F}_3(\sqrt{\sqrt{6}+\sqrt{1+2\sqrt{7}}})\\
+      \mathbb{F}_5 &=\mathbb{F}_4(\sqrt{13})\\
+      \mathbb{F}_6 &=\mathbb{F}_5(\sqrt[4]{13})
+    \end{align*}
+  \end{solution}
+
+\question Explain the main steps of one of the following proofs:
+\begin{itemize}
+  \item That a cube cannot be doubled, or
+  \item That an arbitrary angle cannot be trisected
+\end{itemize}
+In your explanation, state the result which connects constructible numbers to quadratic
+extensions of the rationals, and explain how that theorem is applied to prove the result.
+\begin{solution}
+  \begin{itemize}
+    \item Stating main theorem which connects constructible numbers to quadratic extensions: 5
+    \item 2pts for explaining either that
+      \begin{itemize}
+        \item Doubling a cube is equivalent to constructing $\sqrt[3]{2}$, or 
+        \item Trisecting an angle $3\theta$ is equivalent to constructing $\cos(theta)$.
+      \end{itemize}
+    \item 3 points for explaining either that
+      \begin{itemize}
+        \item If $\sqrt[3]{2}$ is in a quadratic extension $\mathbb{F}(\sqrt{k})$, then it is in the base field $\mathbb{F}$,
+          so this implies $\sqrt[3]{2}$ must be rational if it is constructible, or
+        \item The number $\cos(\theta)$ with $\theta = 20$ deg is the root of a polynomial.  We showed that if this polynomial
+          has a root in some quadratic extension $\mathbb{F}(\sqrt{k})$ then it has a root in $\mathbb{F}$. This implies it
+          has a rational root, and we showed this is impossible.
+      \end{itemize}
+  \end{itemize}
+\end{solution}
+
+
+  \question Can the cube be ``tripled''?
+  \begin{solution}
+    Nope, same argument as for doubled, but with $\sqrt[3]{3}$.
+  \end{solution}
+
+  \question It is clearly possible to divide an arbitrary angle into four equal parts by repeated bisection.  Show how this may
+  also be deduced algebraically from the equation relating $\cos(4\theta)$ and $\cos \theta$.
+  \begin{solution}
+    Assume that an angle $4\theta$ is constructible. By an argument similar to what we have seen in class (i.e. by \emph{geometry},
+    this implies that $\cos(4\theta)$ is constructible.  We also know that dividing the angle into four equal parts would be 
+    equivalent to constructing $\cos(\theta)$. So, we argue that $\cos(\theta)$ is constructible: First, using trig identities you can show that 
+    \[ \cos(4\theta) = 8\cos^4(\theta)-8\cos^2(\theta)+1 \]
+    If we let $x = \cos^2(\theta)$ we obtain the equation,
+    \[ 8x^2 - 8x + (1-\cos(4\theta) = 0\]
+    The quadratic equation gives
+    \[ x = \frac{8 \pm \sqrt{64 - 32(1-\cos(4\theta))}}{16} \]
+    Notice that since $-1 \leq \cos(4\theta) \leq 1$, the discrimiant is at least zero, so the possible values for $x$ are always real 
+    numbers.  Even more, the values of $x$ can clearly be seen to be in $\mathbb{Q}$ or a quadratic extension of $\mathbb{Q}$. Thus
+    those possible values for $x$ are constructible.  That gives us that $\cos^2(\theta)$ is constructible, and that implies
+    $\cos(\theta)$ is constructible.
+  \end{solution}
+
+
+\end{questions}
+\end{document}
+
+
+
+

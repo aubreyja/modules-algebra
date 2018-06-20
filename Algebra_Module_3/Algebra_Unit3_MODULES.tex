@@ -40,7 +40,7 @@
 
 % View instructor notes 
 \newif\ifinstructor 
- \instructortrue  % view as instructor 
+\instructortrue  % view as instructor 
 % \instructorfalse  % view as student
   
 %%%%%%% SECTION FORMATTING %%%%%%%%%%%%
@@ -1236,9 +1236,13 @@ Now, analyze this situation even more carefully by answering the following:
 \header{Summary}
 
 In this part we explore the crucial concepts of the minimum and maximum of a set,
-upper and lower bounds, and least upper bounds and greatest lower bounds. We discuss
-Archimedean fields, complete fields, and explore examples of these. We discuss the real
-numbers as the unique complete ordered field.
+upper and lower bounds, and least upper bounds and greatest lower bounds. These concepts are important
+in themselves in high-school mathematics. However, we take these notions a bit further to explore
+the question of what makes the rational numbers and the real numbers special.
+We discuss Archimedean fields, complete fields, and explore examples of these. These properties are
+of crucial importance for nearly all of the algebra we do in high-school mathematics, but they are rarely
+discussed except at an advanced level. We explore these properties and conclude by indicating the way in
+which the real numbers is truly special - it is the unique complete ordered field.
 
 %%%%%%%%%%%%%%
 {\it Acknowledgements.}  The material in this part is inspired by the notes from courses we've taught. The textbooks used in those courses include
@@ -2223,9 +2227,18 @@ not construct one third of a given angle except in some particular cases. They c
 construct a square with the same area as a given circle.  Nor could they ``double a cube.'' That is, they could not figure out how to construct the 
 side of a cube whose volume would be twice the volume of a cube with a given side.
 
-The interest in these problems from our point of view is that it took the development of the theory of fields to solve these problems. It was not until
-the early 19th century that it was proved to be impossible to trisect an arbitrary angle or of double the volume of a cube using straightedge and compass constructions. 
-Then in the late 19th century it was shown that $\pi$ is a transcendental number, and so it is impossible to use straightedge and compass 
+Constructions using compass and straightedge have a long history in Euclidean geometry, and they reflect the axioms of this system. However,
+the restriction to using only a straightedge and compass is very artificial -- if one is actually interested in constructing a geometrical object 
+for some practical purpose, then there is no reason to limit the tools to use. So why study this subject? 
+
+Our interest comes from two directions. First, the value of the constructions themselves lie in the rich supply of problems that can be 
+posed in this way. And, with regard to the constructions as solutions to these problems the important thing is to be able to analyze a 
+construction to see why it works.  That is, like much of high-school geometry, the process of compass and straightedge construction is an
+application of logic.
+
+But, our primary interest in these problems comes from the fact that it took the development of the theory of fields to solve these problems. It was not until
+the early 19th century that it was proved to be impossible to trisect an arbitrary angle or of double the volume of a cube using straightedge and compass 
+constructions. Then in the late 19th century it was shown that $\pi$ is a transcendental number, and so it is impossible to use straightedge and compass 
 to construct a square with the same area as a given circle. These proofs are beautiful uses of the theory of fields, and we will
 explore them below.
 
@@ -2258,7 +2271,6 @@ are the only operations we can perform with our straightedge and compass.
 \end{definition}
 
 We now build up some important basic constructions using the fundamental constructions.
-
 
 \begin{example}
   Using the fundamental constructions, we can bisect any angle. 
@@ -2755,7 +2767,7 @@ some trigonometry.
       \[ \cos(3\theta) = \cos^{\framebox(4,6){}}\theta - \framebox(5,8){}\sin^2\theta\cos\theta\]
     \item Now use identity $A$ above to replace $\sin^2\theta$ with an expression involving $\cos^2\theta$. Doing so, we obtain
       \[ \cos(3\theta) =\underline{\hspace{4in}} \]
-    \item Simplifying the previous expression we obtain
+    \item Simplify the previous expression and fill in the boxes:
       \[ \cos(3\theta) = \framebox(5,8){}\cos^3\theta - \framebox(5,8){}\cos\theta\]
     \item Now if we set $\theta = 20^\circ$, then $\cos(3\theta) = \cos(60^\circ) = \underline{\hspace{1in}}$. Rewrite the previous
       equation but substitute $20^\circ$ for $\theta$. Since you know the value of $\cos(60^\circ)$, use that value. Just leave
@@ -2858,6 +2870,20 @@ Notice that this equation can be written
   there is no constructible root to this equation. Thus, $2\cos(20^\circ)$, which is a root of this equation, is not constructible. So
   $\cos(20^\circ)$ is not constructible.
 \end{proof}
+
+\subsection{Squaring a Circle}
+
+The ``third'' famous Greek problem is to construct a square that has the same area as the unit circle. Of course, the unit circle has radius $r=1$ and therefore
+area 
+\[ A = \pi r^2 = \pi(1)^2 = \pi.\]
+When we say ``construct a square,'' what we really mean is that we want to construct a line segment whose length squared is the desired area. So, in this case
+what we really want to do is to construct a line segment of length $\sqrt{\pi}$. If we could construct $\sqrt{\pi}$, then we could construct $\pi$. But,
+it turns out that $\pi$ is a so-called ``transcendental number.'' 
+
+An ``algebraic'' number is a real or complex number that is the root of a nonzero polynomial equation with integer (or, equivalently, rational) coefficients. 
+A number is transcendental if it is not algebraic. The numbers $\pi$ and $e$ are both transcendental. It is beyond the scope of these notes to 
+show that $\pi$ is transcendental, as is the fact that transcendental numbers are not constructible. These proofs lead us back to some beautiful 
+mathematics and the reader is encouraged to explore further.
 
 \newpage\subsection{Homework}
 
@@ -3081,7 +3107,7 @@ intersection point of the arcs is an equilateral triangle. You can now construct
     \item In the formula above we see an instance of $\cos(2\theta)$ and an instance of $\sin(2\theta)$. Replacing these with their equivalent
       expressions (identities B and C above) we can write:
       \[ \cos(3\theta) =\underline{\hspace{4in}} \]
-    \item Simplifying the previous expression we obtain
+    \item Simplify the previous expression and fill in the boxes:
       \[ \cos(3\theta) = \cos^{\framebox(4,6){}}\theta - \framebox(5,8){}\sin^2\theta\cos\theta\]
     \item Now use identity $A$ above to replace $\sin^2\theta$ with an expression involving $\cos^2\theta$. Doing so, we obtain
       \[ \cos(3\theta) =\underline{\hspace{4in}} \]
