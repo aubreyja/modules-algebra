@@ -304,6 +304,13 @@ Now, analyze this situation even more carefully by answering the following:
 %%% defines fields and has them explore. I added a homework assignment to have them think about solving equations using Usiskin's definition of field.
 \end{enumerate}
 \end{task}
+\begin{bignote}
+The goal of this opening inquiry is to get students to articulate the properties of addition and multiplication that they use when solving an equation such as this. It is not necessary to start with the
+solution outlined above. A good way to use this inquiry in the classroom would by to have the class solve the equation together ``live'' with the instructor taking suggestions from students about what steps
+to follow and their justifications. A nice feature of this particular example, which is mentioned later in the text, is that the equation $3x+8=14$ can be solved over the integers (without using multiplicative
+inverses), and can be solved over the natural numbers (not using additive inverses). This feature is discussed later, and can be leveraged into a classroom discussion of how students in different grades learn
+to solve equations.
+\end{bignote}
 
 
 \subsection{Introduction to Fields}
@@ -358,13 +365,24 @@ integers.'' We begin the same way:
 \end{align*}
 Next we observe that $6 = 3(2)$ so we have
 \[ 3x = 3(2).\]
-One can prove that in the integers that if $a$, $b$, and $c$ are integers and $ab=ac$ then $b=c$. Using just that fact, we can conclude that
+We have the following propery of integer multplication: if $a$, $b$, and $c$ are integers and $ab=ac$ then $b=c$. Using just that fact, we can conclude that
 \[ x = 2.\]
+
+\begin{bignote}
+  When students first learn multiplication, they are often taught to solve simple equations such as $ax = b$, where $a$ and $b$ are natural numbers. For example, a
+  fourth grade student might be asked to find the number that should go in the box:
+  \[ 3\cdot \square = 6. \]
+  Of course, $2$ is the answer, but it may be interesting to discuss with students how we know that $2$ is the only possible answer. One way to articulate the property we're using
+  is this: if $a$, $b$, and $c$ are integers and $ab=ac$ then $b=c$. A similar fact is that if $a+b=a+c$ then $b=c$. This can be easily proved in the integers using additive inverses,
+  but it's also true in the natural numbers. At this level, restricting students from using multiplicative inverses or additive inverses may seem artificial, but doing so recalls
+  the experience of learning the operations. Young students learn addition before subtraction but are still asked to reason about equations such as $4 + \square =  6$. Students learn
+  about multiplication before division, and are still asked about equations such as $3\cdot \square = 6$. 
+\end{bignote}
 
 \begin{task}
   \begin{itemize}
-    \item Prove that if $a$, $b$, and $c$ are integers and $ab = ac$ then $b=c$. Remember - division is not allowed, we want to do this
-      proof entirely in the integers.
+    %\item Prove that if $a$, $b$, and $c$ are integers and $ab = ac$ then $b=c$. Remember - division is not allowed, we want to do this
+    %  proof entirely in the integers.
     \item Can you solve the equation $3x+8=14$ over the natural numbers? (Here you're not allowed to use additive inverses!)
   \end{itemize}
 \end{task}
@@ -376,7 +394,21 @@ other hand, if $a$, $b$, and $c$ are integers, that does not guarantee that $ax+
 properties necessary on a set of numbers for an equation such as $ax+b=c$ to always have a solution in that set. That is, we want to figure out
 what makes a set of numbers like $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ in this regard. We will call such a set of numbers a field.
 
-We begin with some terminology.
+We begin with some important terminology. It is important to recognize that learning proper terminology in mathematics is crucial and goes beyond simple vocabulary 
+building. The Common Core Standards for Mathematical Practice includes mathematical practice MP6 Attend to Precision, which includes the following:
+
+\begin{quote}
+Mathematically proficient students try to communicate precisely to others. They try to use clear definitions in discussion with others and in their own reasoning. 
+They state the meaning of the symbols they choose, including using the equal sign consistently and appropriately. 
+\end{quote}
+and later
+\begin{quote}
+In the elementary grades, students give carefully formulated explanations to each other. By the time they reach high school they have learned to examine claims and make explicit use of definitions.
+\end{quote}
+
+\begin{task}
+  In a small group, discuss why it is important for high school students to learn and use definitions. Why is it important for teachers?
+\end{task}
 
 We call $0$ an additive identity because for any number $n$, $n+0 = 0 + n = n$. The number $0$ is also an additive identity in the set of complex numbers,
 although more formally it is $0+0i$. A corresponding notion for multiplication exists - the multiplicative identity.
@@ -386,6 +418,8 @@ although more formally it is $0+0i$. A corresponding notion for multiplication e
     \item Consider the collection of all $2\times 2$ matrices whose entries are real numbers. Write down the additive identity of this set.
     \item How would you define the general notion of a \emph{multiplicative identity}? What is a multiplicative identity in $\mathbb{Q}$?
     \item Is there a multiplicative identity for the set of all $2\times 2$ matrices with real entries?
+    \item Recall that a rational function is a function of the form $r(x) = \frac{p(x)}{q(x)}$ where $p(x)$ and $q(x)$ are polynomials. The set
+      of rational functions is sometimes called $\mathbb{Q}(x)$. What do you think is the multplicative identity in $\mathbb{Q}(x)$?
   \end{itemize}
 \end{task}
 
@@ -396,6 +430,10 @@ a number $b$ is an additive inverse of a number $a$ if and only if $a+b=b+a = 0$
   How would you define the notion of a \emph{multiplicative inverse}? Give an example of a number $a$ and its 
   multiplicative inverse $b$.
 \end{task}
+
+We now define the notion of a \emph{field}. We already know about some fields: the field of rational numbers $\mathbb{Q}$, the field of real numbers $\mathbb{R}$, the
+field of complex numbers $\mathbb{C}$. Some of the properties these sets have in common will be taken as axioms. Axioms are just rules that we accept as defining
+the crucial properties of a class of mathematical objects. In this case, our axioms will \textit{define} what it means for a mathematical structure to be a field.
 
 A \emph{field} $\mathbb{F}$ is a collection of mathematical objects (possibly numbers, matrices, functions, etc.) with two operations, called
 addition ($+$) and multiplication ($\cdot$), in which we can always solve an equation of the form
@@ -947,7 +985,7 @@ Above we gave the axioms that define a field. We add to those the following \emp
 
 \newpage \subsection{In-Class Resources}
 
-\subsubsection{Opening inquiry: Solving Equations}
+\subsubsection{Opening Inquiry: Solving Equations}
 
 \begin{task}
   Consider the equation:
